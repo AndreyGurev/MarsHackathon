@@ -41,7 +41,7 @@ namespace Dns.СozyHome.Repository
         {
             await using var dbContext = new DnsСozyHomeContext();
             return await dbContext.GoodARModels
-                .Where(model => model.GoodId == goodId)
+                .Where(model => model.GoodId == goodId && model.ARModelType == 0)
                 .Select(model => model.Armodel)
                 .SingleAsync();
         }

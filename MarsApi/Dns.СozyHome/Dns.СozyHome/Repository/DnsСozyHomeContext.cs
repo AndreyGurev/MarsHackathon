@@ -75,11 +75,11 @@ namespace Dns.СozyHome.Repository
 
             modelBuilder.Entity<GoodARModel>(entity =>
             {
-                entity.HasKey(e => new { e.GoodId, e.ArmodelType });
+                entity.HasKey(e => new { e.GoodId, ArmodelType = e.ARModelType });
 
                 entity.ToTable("GoodARModels");
 
-                entity.Property(e => e.ArmodelType).HasColumnName("ARModelType");
+                entity.Property(e => e.ARModelType).HasColumnName("ARModelType");
 
                 entity.Property(e => e.Armodel)
                     .IsRequired()
