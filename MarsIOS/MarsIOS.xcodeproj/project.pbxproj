@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,6 +50,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		556BCFD12543BFAF0068AD28 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				556BCFD52543C1C90068AD28 /* Common */,
+				556BCFD72543C1DF0068AD28 /* Gateway */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		556BCFD42543C15F0068AD28 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		556BCFD52543C1C90068AD28 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		556BCFD62543C1CE0068AD28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		556BCFD72543C1DF0068AD28 /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
 		55B573422543B63E00EE25CB = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +108,9 @@
 		55B5734D2543B63E00EE25CB /* MarsIOS */ = {
 			isa = PBXGroup;
 			children = (
+				556BCFD62543C1CE0068AD28 /* Extensions */,
+				556BCFD42543C15F0068AD28 /* Screens */,
+				556BCFD12543BFAF0068AD28 /* Core */,
 				55B5734E2543B63E00EE25CB /* AppDelegate.swift */,
 				55B573502543B63E00EE25CB /* ViewController.swift */,
 				55B573522543B63E00EE25CB /* Experience.rcproject */,
@@ -88,7 +128,6 @@
 				C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */,
 				F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -366,7 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AG.MarsIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -386,7 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AG.MarsIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
