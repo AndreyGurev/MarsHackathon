@@ -13,6 +13,7 @@
 		55B573562543B63E00EE25CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B573542543B63E00EE25CB /* Main.storyboard */; };
 		55B573582543B64200EE25CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B573572543B64200EE25CB /* Assets.xcassets */; };
 		55B5735B2543B64200EE25CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B573592543B64200EE25CB /* LaunchScreen.storyboard */; };
+		6F349572D86469A27ADB293E /* Pods_MarsIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		55B573572543B64200EE25CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B5735A2543B64200EE25CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B5735C2543B64200EE25CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.debug.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.release.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F349572D86469A27ADB293E /* Pods_MarsIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F11DE80F0B98924DC0F86ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		55B573422543B63E00EE25CB = {
 			isa = PBXGroup;
 			children = (
 				55B5734D2543B63E00EE25CB /* MarsIOS */,
 				55B5734C2543B63E00EE25CB /* Products */,
+				79D6234A1D90B6CBBD3352DA /* Pods */,
+				0F11DE80F0B98924DC0F86ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = MarsIOS;
 			sourceTree = "<group>";
 		};
+		79D6234A1D90B6CBBD3352DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */,
+				F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B5735F2543B64200EE25CB /* Build configuration list for PBXNativeTarget "MarsIOS" */;
 			buildPhases = (
+				F8D97B4A5B35728D1D6BC322 /* [CP] Check Pods Manifest.lock */,
 				55B573472543B63E00EE25CB /* Sources */,
 				55B573482543B63E00EE25CB /* Frameworks */,
 				55B573492543B63E00EE25CB /* Resources */,
+				66AB45C2AEAF1956D4F2B79E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66AB45C2AEAF1956D4F2B79E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarsIOS/Pods-MarsIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarsIOS/Pods-MarsIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarsIOS/Pods-MarsIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8D97B4A5B35728D1D6BC322 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarsIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55B573472543B63E00EE25CB /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		55B573602543B64200EE25CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		55B573612543B64200EE25CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
