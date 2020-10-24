@@ -14,11 +14,11 @@ namespace Dns.СozyHome.Repository
             await using var dbContext = new DnsСozyHomeContext();
             var res = await dbContext.CatalogItems
                 .Where(item => item.ParentId == parentId)
-                .Include(item => item.GoodAdditionalInfo)
-                .Include(item => item.GoodPrice)
                 .Select(item => new
                 {
                     item,
+                    IsAR = !item.IsFolder && item.GoodAdditionalInfo.IsAR,
+                    Price = item.IsFolder ? 0 : item.GoodPrice.Price,
                     Preview = item.CatalogItemImages
                         .Where(image => image.ImageIndex == 0)
                         .Select(image => image.Image)
@@ -32,7 +32,7 @@ namespace Dns.СozyHome.Repository
                     true => new FolderCatalogItem(item.item.Id, item.item.ParentId, item.item.Name,
                         item.Preview),
                     false => new GoodCatalogItem(item.item.Id, item.item.ParentId, item.item.Name,
-                        item.item.GoodAdditionalInfo.IsAR, item.item.GoodPrice.Price, item.Preview)
+                        item.IsAR, item.Price, item.Preview)
                 }));
         }
 
