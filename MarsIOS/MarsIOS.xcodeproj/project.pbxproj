@@ -15,6 +15,10 @@
 		55B573562543B63E00EE25CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B573542543B63E00EE25CB /* Main.storyboard */; };
 		55B573582543B64200EE25CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B573572543B64200EE25CB /* Assets.xcassets */; };
 		55B5735B2543B64200EE25CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B573592543B64200EE25CB /* LaunchScreen.storyboard */; };
+		55BA08C32543D50000A4D5FB /* CatalogCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08C22543D50000A4D5FB /* CatalogCollectionViewController.swift */; };
+		55BA08C92543D58100A4D5FB /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08C82543D58100A4D5FB /* ProductItem.swift */; };
+		55BA08CD2543D59C00A4D5FB /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08CC2543D59C00A4D5FB /* CatalogPresenter.swift */; };
+		55BA08D02543D5BD00A4D5FB /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08CF2543D5BD00A4D5FB /* CatalogCollectionViewCell.swift */; };
 		6F349572D86469A27ADB293E /* Pods_MarsIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		55B573572543B64200EE25CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B5735A2543B64200EE25CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B5735C2543B64200EE25CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55BA08C22543D50000A4D5FB /* CatalogCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewController.swift; sourceTree = "<group>"; };
+		55BA08C82543D58100A4D5FB /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
+		55BA08CC2543D59C00A4D5FB /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		55BA08CF2543D5BD00A4D5FB /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
 		C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.debug.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.release.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +74,7 @@
 		556BCFD42543C15F0068AD28 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				55BA08C12543D48900A4D5FB /* Catalog */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -126,6 +135,33 @@
 				55B5735C2543B64200EE25CB /* Info.plist */,
 			);
 			path = MarsIOS;
+			sourceTree = "<group>";
+		};
+		55BA08C12543D48900A4D5FB /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				55BA08C72543D52F00A4D5FB /* Presenter */,
+				55BA08C62543D52900A4D5FB /* View */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		55BA08C62543D52900A4D5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55BA08C22543D50000A4D5FB /* CatalogCollectionViewController.swift */,
+				55BA08CF2543D5BD00A4D5FB /* CatalogCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55BA08C72543D52F00A4D5FB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				55BA08C82543D58100A4D5FB /* ProductItem.swift */,
+				55BA08CC2543D59C00A4D5FB /* CatalogPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		79D6234A1D90B6CBBD3352DA /* Pods */ = {
@@ -252,9 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B573512543B63E00EE25CB /* ViewController.swift in Sources */,
+				55BA08D02543D5BD00A4D5FB /* CatalogCollectionViewCell.swift in Sources */,
+				55BA08C92543D58100A4D5FB /* ProductItem.swift in Sources */,
 				556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */,
 				55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */,
+				55BA08CD2543D59C00A4D5FB /* CatalogPresenter.swift in Sources */,
 				556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */,
+				55BA08C32543D50000A4D5FB /* CatalogCollectionViewController.swift in Sources */,
 				55B573532543B63E00EE25CB /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
