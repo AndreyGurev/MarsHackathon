@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '14.0'
+use_frameworks!
+target ‘MarsIOS’ do
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'PureLayout'
+  pod 'SwiftMessages'
+  pod 'NVActivityIndicatorView'
+end
