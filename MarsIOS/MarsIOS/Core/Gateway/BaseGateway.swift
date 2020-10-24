@@ -10,12 +10,32 @@ import Alamofire
 import AlamofireImage
 
 final class BaseGateway: NSObject {
-    private let baseApiUrl = ""
+    private let baseApiUrl = "http://192.168.43.146:9000/api/"
+    
+    
+    private static var Manager: Alamofire.SessionManager = {
+               
+                      // Create the server trust policies
+                      let serverTrustPolicies: [String: ServerTrustPolicy] = [
+                          
+                           "192.168.43.146:9001": .disableEvaluation
+                      ]
+            
+                      // Create custom manager
+                      let configuration = URLSessionConfiguration.default
+                      configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+                      let manager = Alamofire.SessionManager(
+                           configuration: URLSessionConfiguration.default,
+                           serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+                      )
+            
+                      return manager
+                 }()
     
     public var manager: SessionManager
     
     override init() {
-        self.manager = Alamofire.SessionManager.default
+        self.manager = BaseGateway.Manager
     }
     
     public func cancelAllTasks() {
@@ -33,9 +53,9 @@ final class BaseGateway: NSObject {
         return parameters
     }
     
-    public func postRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
+    public func postRequest(url: String, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         
-        manager.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { responseJSON in
+        manager.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { responseJSON in
                 self.handleResponse(response: responseJSON, completion: { data in
                     completion(data)
                 }, error: error, finally: finally)
@@ -54,9 +74,9 @@ final class BaseGateway: NSObject {
         }
     }
     
-    public func getRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
+    public func getRequest(url: String, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
                 
-        manager.request(url, parameters: parameters, headers: headers).responseJSON { responseJSON in
+        manager.request(baseApiUrl + url, parameters: parameters).responseJSON { responseJSON in
                 self.handleResponse(response: responseJSON, completion: { data in
                     completion(data)
                 }, error: error, finally: finally)

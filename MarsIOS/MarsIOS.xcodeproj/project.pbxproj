@@ -10,15 +10,19 @@
 		556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BCFD82543C31F0068AD28 /* BaseGateway.swift */; };
 		556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BCFDB2543C3280068AD28 /* CustomError.swift */; };
 		55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B5734E2543B63E00EE25CB /* AppDelegate.swift */; };
-		55B573512543B63E00EE25CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B573502543B63E00EE25CB /* ViewController.swift */; };
+		55B573512543B63E00EE25CB /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B573502543B63E00EE25CB /* ARViewController.swift */; };
 		55B573532543B63E00EE25CB /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 55B573522543B63E00EE25CB /* Experience.rcproject */; };
 		55B573562543B63E00EE25CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B573542543B63E00EE25CB /* Main.storyboard */; };
 		55B573582543B64200EE25CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B573572543B64200EE25CB /* Assets.xcassets */; };
 		55B5735B2543B64200EE25CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B573592543B64200EE25CB /* LaunchScreen.storyboard */; };
-		55BA08C32543D50000A4D5FB /* CatalogCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08C22543D50000A4D5FB /* CatalogCollectionViewController.swift */; };
+		55BA08C32543D50000A4D5FB /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08C22543D50000A4D5FB /* CatalogViewController.swift */; };
 		55BA08C92543D58100A4D5FB /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08C82543D58100A4D5FB /* ProductItem.swift */; };
 		55BA08CD2543D59C00A4D5FB /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08CC2543D59C00A4D5FB /* CatalogPresenter.swift */; };
 		55BA08D02543D5BD00A4D5FB /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08CF2543D5BD00A4D5FB /* CatalogCollectionViewCell.swift */; };
+		55BA08DA2543E34F00A4D5FB /* CatalogCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA08D92543E34F00A4D5FB /* CatalogCollectionViewManager.swift */; };
+		55BA09062544082E00A4D5FB /* ProductCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA09052544082E00A4D5FB /* ProductCardViewController.swift */; };
+		55BA090A2544089C00A4D5FB /* ProductCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA09092544089C00A4D5FB /* ProductCardItem.swift */; };
+		55BA090D254408AD00A4D5FB /* ProductCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA090C254408AD00A4D5FB /* ProductCardPresenter.swift */; };
 		6F349572D86469A27ADB293E /* Pods_MarsIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,16 +31,20 @@
 		556BCFDB2543C3280068AD28 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		55B5734B2543B63E00EE25CB /* MarsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B5734E2543B63E00EE25CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55B573502543B63E00EE25CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55B573502543B63E00EE25CB /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		55B573522543B63E00EE25CB /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		55B573552543B63E00EE25CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55B573572543B64200EE25CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B5735A2543B64200EE25CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B5735C2543B64200EE25CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55BA08C22543D50000A4D5FB /* CatalogCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewController.swift; sourceTree = "<group>"; };
+		55BA08C22543D50000A4D5FB /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		55BA08C82543D58100A4D5FB /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
 		55BA08CC2543D59C00A4D5FB /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
 		55BA08CF2543D5BD00A4D5FB /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
+		55BA08D92543E34F00A4D5FB /* CatalogCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewManager.swift; sourceTree = "<group>"; };
+		55BA09052544082E00A4D5FB /* ProductCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewController.swift; sourceTree = "<group>"; };
+		55BA09092544089C00A4D5FB /* ProductCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardItem.swift; sourceTree = "<group>"; };
+		55BA090C254408AD00A4D5FB /* ProductCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardPresenter.swift; sourceTree = "<group>"; };
 		C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.debug.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.release.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +70,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		551A68282544310500B6C842 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				55B573502543B63E00EE25CB /* ARViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		556BCFD12543BFAF0068AD28 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +90,8 @@
 		556BCFD42543C15F0068AD28 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				551A68282544310500B6C842 /* AR */,
+				55BA0902254407FC00A4D5FB /* ProductCard */,
 				55BA08C12543D48900A4D5FB /* Catalog */,
 			);
 			path = Screens;
@@ -127,7 +145,6 @@
 				556BCFD42543C15F0068AD28 /* Screens */,
 				556BCFD12543BFAF0068AD28 /* Core */,
 				55B5734E2543B63E00EE25CB /* AppDelegate.swift */,
-				55B573502543B63E00EE25CB /* ViewController.swift */,
 				55B573522543B63E00EE25CB /* Experience.rcproject */,
 				55B573542543B63E00EE25CB /* Main.storyboard */,
 				55B573572543B64200EE25CB /* Assets.xcassets */,
@@ -149,8 +166,9 @@
 		55BA08C62543D52900A4D5FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				55BA08C22543D50000A4D5FB /* CatalogCollectionViewController.swift */,
+				55BA08C22543D50000A4D5FB /* CatalogViewController.swift */,
 				55BA08CF2543D5BD00A4D5FB /* CatalogCollectionViewCell.swift */,
+				55BA08D92543E34F00A4D5FB /* CatalogCollectionViewManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +180,32 @@
 				55BA08CC2543D59C00A4D5FB /* CatalogPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		55BA0902254407FC00A4D5FB /* ProductCard */ = {
+			isa = PBXGroup;
+			children = (
+				55BA09042544081500A4D5FB /* View */,
+				55BA09032544080C00A4D5FB /* Presenter */,
+			);
+			path = ProductCard;
+			sourceTree = "<group>";
+		};
+		55BA09032544080C00A4D5FB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				55BA09092544089C00A4D5FB /* ProductCardItem.swift */,
+				55BA090C254408AD00A4D5FB /* ProductCardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		55BA09042544081500A4D5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55BA09052544082E00A4D5FB /* ProductCardViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		79D6234A1D90B6CBBD3352DA /* Pods */ = {
@@ -287,14 +331,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B573512543B63E00EE25CB /* ViewController.swift in Sources */,
+				55B573512543B63E00EE25CB /* ARViewController.swift in Sources */,
+				55BA090D254408AD00A4D5FB /* ProductCardPresenter.swift in Sources */,
 				55BA08D02543D5BD00A4D5FB /* CatalogCollectionViewCell.swift in Sources */,
+				55BA090A2544089C00A4D5FB /* ProductCardItem.swift in Sources */,
+				55BA09062544082E00A4D5FB /* ProductCardViewController.swift in Sources */,
 				55BA08C92543D58100A4D5FB /* ProductItem.swift in Sources */,
 				556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */,
 				55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */,
 				55BA08CD2543D59C00A4D5FB /* CatalogPresenter.swift in Sources */,
+				55BA08DA2543E34F00A4D5FB /* CatalogCollectionViewManager.swift in Sources */,
 				556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */,
-				55BA08C32543D50000A4D5FB /* CatalogCollectionViewController.swift in Sources */,
+				55BA08C32543D50000A4D5FB /* CatalogViewController.swift in Sources */,
 				55B573532543B63E00EE25CB /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
