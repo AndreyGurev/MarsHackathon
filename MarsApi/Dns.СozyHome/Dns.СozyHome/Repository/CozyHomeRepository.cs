@@ -30,11 +30,17 @@ namespace Dns.СozyHome.Repository
                 .Where(item => item.Id == id)
                 .Include(item => item.GoodAdditionalInfo)
                 .Include(item => item.GoodPrice)
-                .Include(item => item.CatalogItemImages)
+                .Select(item => new
+                {
+                    item,
+                    Images = item.CatalogItemImages
+                        .Where(image => image.ImageIndex != 0)
+                        .Select(image => image.Image)
+                })
                 .SingleAsync();
 
-            return new Good(res.Id, res.ParentId, res.Name, res.GoodAdditionalInfo.IsAR, res.GoodPrice.Price,
-                res.CatalogItemImages.Select(image => image.Image).ToList(), res.GoodAdditionalInfo.Description);
+            return new Good(res.item.Id, res.item.ParentId, res.item.Name, res.item.GoodAdditionalInfo.IsAR, res.item.GoodPrice.Price,
+                res.Images.ToList(), res.item.GoodAdditionalInfo.Description);
         }
 
         public async Task<byte[]> GetARModelAsync(Guid goodId)
