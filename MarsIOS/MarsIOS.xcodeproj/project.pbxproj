@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551A682F25445ADC00B6C842 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 551A682E25445ADC00B6C842 /* Models.scnassets */; };
 		556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BCFD82543C31F0068AD28 /* BaseGateway.swift */; };
 		556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BCFDB2543C3280068AD28 /* CustomError.swift */; };
 		55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B5734E2543B63E00EE25CB /* AppDelegate.swift */; };
@@ -23,10 +24,15 @@
 		55BA09062544082E00A4D5FB /* ProductCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA09052544082E00A4D5FB /* ProductCardViewController.swift */; };
 		55BA090A2544089C00A4D5FB /* ProductCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA09092544089C00A4D5FB /* ProductCardItem.swift */; };
 		55BA090D254408AD00A4D5FB /* ProductCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA090C254408AD00A4D5FB /* ProductCardPresenter.swift */; };
+		55F0706D25446B4B0028AF44 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0706C25446B4B0028AF44 /* VirtualObjectARView.swift */; };
+		55F0707225446B850028AF44 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0707025446B850028AF44 /* VirtualObjectLoader.swift */; };
+		55F0707325446B850028AF44 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0707125446B850028AF44 /* VirtualObject.swift */; };
+		55F0707725446BD60028AF44 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0707625446BD60028AF44 /* Utilities.swift */; };
 		6F349572D86469A27ADB293E /* Pods_MarsIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551A682E25445ADC00B6C842 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		556BCFD82543C31F0068AD28 /* BaseGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGateway.swift; sourceTree = "<group>"; };
 		556BCFDB2543C3280068AD28 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		55B5734B2543B63E00EE25CB /* MarsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,10 @@
 		55BA09052544082E00A4D5FB /* ProductCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewController.swift; sourceTree = "<group>"; };
 		55BA09092544089C00A4D5FB /* ProductCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardItem.swift; sourceTree = "<group>"; };
 		55BA090C254408AD00A4D5FB /* ProductCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardPresenter.swift; sourceTree = "<group>"; };
+		55F0706C25446B4B0028AF44 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		55F0707025446B850028AF44 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
+		55F0707125446B850028AF44 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		55F0707625446BD60028AF44 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C55246ED9ABFFDBF20680D3E /* Pods-MarsIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.debug.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D5FAC93E1C0D0038F6B0D5E7 /* Pods_MarsIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F820065D1C47F03D134938C5 /* Pods-MarsIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsIOS.release.xcconfig"; path = "Target Support Files/Pods-MarsIOS/Pods-MarsIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,9 +83,28 @@
 		551A68282544310500B6C842 /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				55B573502543B63E00EE25CB /* ARViewController.swift */,
+				551A683325445C5900B6C842 /* View */,
+				551A683225445C5100B6C842 /* Presenter */,
 			);
 			path = AR;
+			sourceTree = "<group>";
+		};
+		551A683225445C5100B6C842 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				55F0707525446BD60028AF44 /* Utilities */,
+				55F0706F25446B850028AF44 /* Virtual Objects */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		551A683325445C5900B6C842 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55F0706C25446B4B0028AF44 /* VirtualObjectARView.swift */,
+				55B573502543B63E00EE25CB /* ARViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		556BCFD12543BFAF0068AD28 /* Core */ = {
@@ -150,6 +179,7 @@
 				55B573572543B64200EE25CB /* Assets.xcassets */,
 				55B573592543B64200EE25CB /* LaunchScreen.storyboard */,
 				55B5735C2543B64200EE25CB /* Info.plist */,
+				551A682E25445ADC00B6C842 /* Models.scnassets */,
 			);
 			path = MarsIOS;
 			sourceTree = "<group>";
@@ -206,6 +236,23 @@
 				55BA09052544082E00A4D5FB /* ProductCardViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		55F0706F25446B850028AF44 /* Virtual Objects */ = {
+			isa = PBXGroup;
+			children = (
+				55F0707025446B850028AF44 /* VirtualObjectLoader.swift */,
+				55F0707125446B850028AF44 /* VirtualObject.swift */,
+			);
+			path = "Virtual Objects";
+			sourceTree = "<group>";
+		};
+		55F0707525446BD60028AF44 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				55F0707625446BD60028AF44 /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		79D6234A1D90B6CBBD3352DA /* Pods */ = {
@@ -276,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551A682F25445ADC00B6C842 /* Models.scnassets in Resources */,
 				55B5735B2543B64200EE25CB /* LaunchScreen.storyboard in Resources */,
 				55B573582543B64200EE25CB /* Assets.xcassets in Resources */,
 				55B573562543B63E00EE25CB /* Main.storyboard in Resources */,
@@ -331,7 +379,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F0706D25446B4B0028AF44 /* VirtualObjectARView.swift in Sources */,
 				55B573512543B63E00EE25CB /* ARViewController.swift in Sources */,
+				55F0707225446B850028AF44 /* VirtualObjectLoader.swift in Sources */,
 				55BA090D254408AD00A4D5FB /* ProductCardPresenter.swift in Sources */,
 				55BA08D02543D5BD00A4D5FB /* CatalogCollectionViewCell.swift in Sources */,
 				55BA090A2544089C00A4D5FB /* ProductCardItem.swift in Sources */,
@@ -339,8 +389,10 @@
 				55BA08C92543D58100A4D5FB /* ProductItem.swift in Sources */,
 				556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */,
 				55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */,
+				55F0707725446BD60028AF44 /* Utilities.swift in Sources */,
 				55BA08CD2543D59C00A4D5FB /* CatalogPresenter.swift in Sources */,
 				55BA08DA2543E34F00A4D5FB /* CatalogCollectionViewManager.swift in Sources */,
+				55F0707325446B850028AF44 /* VirtualObject.swift in Sources */,
 				556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */,
 				55BA08C32543D50000A4D5FB /* CatalogViewController.swift in Sources */,
 				55B573532543B63E00EE25CB /* Experience.rcproject in Sources */,
