@@ -249,23 +249,54 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ARVC" title="AR" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="dark" id="BYZ-38-t0r" userLabel="ARView" customClass="ARViewController" customModule="MarsIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <arView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="ecp-So-N8c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJZ-jY-RNP" customClass="VirtualObjectARView" customModule="MarsIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zs-fA-x3R">
+                                <rect key="frame" x="187" y="814" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="BuO-a4-XCS"/>
+                                    <constraint firstAttribute="height" constant="40" id="nvL-3N-94R"/>
+                                </constraints>
+                                <state key="normal" image="Add"/>
+                                <connections>
+                                    <action selector="onAddTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qib-ep-lCf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u8F-3H-MNh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SJZ-jY-RNP" firstAttribute="top" secondItem="ecp-So-N8c" secondAttribute="top" id="JBV-5j-uul"/>
+                            <constraint firstAttribute="bottom" secondItem="SJZ-jY-RNP" secondAttribute="bottom" id="JFd-Jg-11t"/>
+                            <constraint firstItem="SJZ-jY-RNP" firstAttribute="trailing" secondItem="u8F-3H-MNh" secondAttribute="trailing" id="QAn-Xo-UTh"/>
+                            <constraint firstItem="5Zs-fA-x3R" firstAttribute="bottom" secondItem="u8F-3H-MNh" secondAttribute="bottom" constant="-8" id="gHH-U5-DRg"/>
+                            <constraint firstItem="SJZ-jY-RNP" firstAttribute="leading" secondItem="u8F-3H-MNh" secondAttribute="leading" id="hZi-Li-bFl"/>
+                            <constraint firstItem="5Zs-fA-x3R" firstAttribute="centerX" secondItem="ecp-So-N8c" secondAttribute="centerX" id="tdI-Lj-5V4"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="arView" destination="8bC-Xf-vdC" id="TPV-4x-avp"/>
+                        <outlet property="addButton" destination="5Zs-fA-x3R" id="CoP-Xp-d68"/>
+                        <outlet property="arView" destination="SJZ-jY-RNP" id="wsj-OQ-c5L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="134"/>
+            <point key="canvasLocation" x="644.92753623188412" y="133.92857142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="48" height="48"/>
         <image name="ArIcon" width="832.5" height="954"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
