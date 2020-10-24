@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dns.СozyHome", "Dns.СozyHome\Dns.СozyHome.csproj", "{0057574B-FDA0-4E6A-893B-2C6821726FFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dns.СozyHome", "Dns.СozyHome\Dns.СozyHome.csproj", "{9B2AE37F-71E9-42BA-9712-2C109E663197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0057574B-FDA0-4E6A-893B-2C6821726FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0057574B-FDA0-4E6A-893B-2C6821726FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0057574B-FDA0-4E6A-893B-2C6821726FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0057574B-FDA0-4E6A-893B-2C6821726FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2AE37F-71E9-42BA-9712-2C109E663197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2AE37F-71E9-42BA-9712-2C109E663197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2AE37F-71E9-42BA-9712-2C109E663197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2AE37F-71E9-42BA-9712-2C109E663197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F1C0D208-713D-4AC2-B57F-BD04F8CF5AF0}
+		SolutionGuid = {FD5D2984-03CD-4ED4-8935-28D44C398CE5}
 	EndGlobalSection
 EndGlobal

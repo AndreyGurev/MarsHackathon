@@ -4,9 +4,7 @@ MarsIOS/.DS_Store
 MarsIOS/MarsIOS.xcworkspace/
 .DS_Store
 /.idea/
-/MarsApi/Dns.СozyHome/.vs/
-/MarsApi/Dns.СozyHome/Dns.СozyHome/bin/
-/MarsApi/Dns.СozyHome/Dns.СozyHome/obj/
-/MarsApi/Dns.СozyHome/.idea/
-/MarsApi/Dns.СozyHome/Repository/bin/
-/MarsApi/Dns.СozyHome/Repository/obj/
+/Dns.СozyHome/.idea/
+/Dns.СozyHome/.vs/
+/Dns.СozyHome/Dns.СozyHome/bin/
+/Dns.СozyHome/Dns.СozyHome/obj/

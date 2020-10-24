@@ -41,8 +41,6 @@ namespace Dns.СozyHome
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
             
             app.UseSwagger();
 
