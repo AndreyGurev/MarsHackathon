@@ -16,9 +16,9 @@ final class CustomError {
     static let tokenDie = CustomError(text: "Время жизни токена авторизации истекло, повторите вход")
     static let serverError = CustomError(text: "Сервер временно недоступен, повторите попытку позже")
 
-    let title: String?
-    let text: String
-    var code: Int?
+    private let title: String?
+    private let text: String
+    private var code: Int?
     
     init(title: String? = nil, text: String, code: Int? = nil) {
         self.title = title
