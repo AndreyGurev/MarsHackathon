@@ -1,9 +1,8 @@
 //
 //  BaseGateway.swift
-//  genie
+//  MarsIOS
 //
-//  Created by Andrey Gurev on 14.10.2020.
-//  Copyright © 2020 Andrey Gurev. All rights reserved.
+//  Created by Andrey Gurev on 24.10.2020.
 //
 
 import UIKit
@@ -11,7 +10,7 @@ import Alamofire
 import AlamofireImage
 
 final class BaseGateway: NSObject {
-    private let baseApiUrl = "https://api.genie.film/api/"
+    private let baseApiUrl = ""
     
     var manager: SessionManager
     
@@ -34,7 +33,7 @@ final class BaseGateway: NSObject {
         return parameters
     }
     
-    func postRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (Error) -> (), finally: (() -> ())?) {
+    func postRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         
         manager.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { responseJSON in
                 self.handleResponse(responseJSON: responseJSON, completion: { data in
@@ -43,7 +42,7 @@ final class BaseGateway: NSObject {
         }
     }
     
-    func patchRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (Error) -> (), finally: (() -> ())?) {
+    func patchRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         
         manager.request(url, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { responseJSON in
             self.handleResponse(responseJSON: responseJSON, completion: { data in
@@ -52,7 +51,7 @@ final class BaseGateway: NSObject {
         }
     }
     
-    func getRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (Error) -> (), finally: (() -> ())?) {
+    func getRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
                 
         manager.request(url, parameters: parameters, headers: headers).responseJSON { responseJSON in
                 self.handleResponse(responseJSON: responseJSON, completion: { data in
@@ -61,7 +60,7 @@ final class BaseGateway: NSObject {
             }
     }
     
-    func deleteRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping () -> (), error: @escaping (Error) -> (), finally: (() -> ())?) {
+    func deleteRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping () -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         
         manager.request(url, method: .delete, parameters: parameters, headers: headers).responseJSON { responseJSON in
             self.handleResponse(responseJSON: responseJSON, completion: { _ in
@@ -70,7 +69,7 @@ final class BaseGateway: NSObject {
         }
     }
     
-    func putRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (Error) -> (), finally: (() -> ())?) {
+    func putRequest(url: String, headers: HTTPHeaders, parameters: Parameters, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         
         manager.request(url, method: .put, parameters: parameters, headers: headers).responseJSON { responseJSON in
             self.handleResponse(responseJSON: responseJSON, completion: { data in
@@ -79,7 +78,7 @@ final class BaseGateway: NSObject {
         }
     }
     
-    private func handleResponse(responseJSON: DataResponse<Any>, completion: @escaping (Any) -> (), error: @escaping (Error) -> (), finally: (() -> ())?) {
+    private func handleResponse(responseJSON: DataResponse<Any>, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         switch responseJSON.result {
         case .success(let value):
             switch responseJSON.response?.statusCode {
@@ -89,34 +88,34 @@ final class BaseGateway: NSObject {
                 } else if let array = value as? [[String: Any]] {
                     completion(array)
                 } else {
-                    error(Error.parsingFail)
+                    error(CustomError.parsingFail)
                 }
             case 401:
-                let tokenError = Error.tokenDie
+                let tokenError = CustomError.tokenDie
                 tokenError.code = 401
                 error(tokenError)
             case 400, 422:
                 error(handleError(value))
             case 500, 501:
-                error(Error.serverError)
+                error(CustomError.serverError)
             default:
-                error(Error.unknown)
+                error(CustomError.unknown)
             }
         
         case .failure(let errorMessage):
             if errorMessage._code != -999 {
-                error(Error.networkFail)
+                error(CustomError.networkFail)
             }
         }
         
         finally?()
     }
     
-    private func handleError(_ value: Any?) -> Error {
-        if let mappedError = Error.mapError(value: value) {
+    private func handleError(_ value: Any?) -> CustomError {
+        if let mappedError = CustomError.mapError(value: value) {
             return mappedError
         }
         
-        return Error.unknown
+        return CustomError.unknown
     }
 }
