@@ -23,6 +23,20 @@ namespace Dns.СozyHome.Repository
             return res.ConvertAll(ConvertToModel);
         }
 
+        public async Task<Good> GetGoodAsync(Guid id)
+        {
+            await using var dbContext = new DnsСozyHomeContext();
+            var res = await dbContext.CatalogItems
+                .Where(item => item.Id == id)
+                .Include(item => item.GoodAdditionalInfo)
+                .Include(item => item.GoodPrice)
+                .Include(item => item.CatalogItemImages)
+                .SingleAsync();
+
+            return new Good(res.Id, res.ParentId, res.Name, res.GoodAdditionalInfo.IsAR, res.GoodPrice.Price,
+                res.CatalogItemImages.Select(image => image.Image).ToList(), res.GoodAdditionalInfo.Description);
+        }
+
         private ICatalogItem ConvertToModel(CatalogItem item) =>
             item.IsFolder switch
             {

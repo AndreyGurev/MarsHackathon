@@ -22,5 +22,10 @@ namespace Dns.СozyHome.Api
         public async Task<List<CatalogItemView>> GetCatalogItemsAsync(Guid parentId) =>
             (await _manager.GetCatalogItemsAsync(parentId))
             .ConvertAll(item => new CatalogItemView(item));
+
+        [HttpGet]
+        [Route("getGood")]
+        public async Task<GoodView> GetGoodAsync(Guid id) =>
+            new GoodView(await _manager.GetGoodAsync(id));
     }
 }

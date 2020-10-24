@@ -15,5 +15,8 @@ namespace Dns.СozyHome.Core
 
         public Task<List<ICatalogItem>> GetCatalogItemsAsync(Guid parentId) =>
             _repository.GetCatalogItemsAsync(parentId);
+
+        public Task<Good> GetGoodAsync(Guid id) =>
+            _repository.GetGoodAsync(id);
     }
 }
