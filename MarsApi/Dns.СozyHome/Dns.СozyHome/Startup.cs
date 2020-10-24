@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dns.СozyHome.Core;
+using Dns.СozyHome.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,10 @@ namespace Dns.СozyHome
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
+
+            services.AddSingleton<ICozyHomeRepository, CozyHomeRepository>();
+            services.AddSingleton<CozyHomeManager, CozyHomeManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +43,13 @@ namespace Dns.СozyHome
             }
 
             app.UseHttpsRedirection();
+            
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseRouting();
 
