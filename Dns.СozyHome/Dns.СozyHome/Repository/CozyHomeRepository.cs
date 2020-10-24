@@ -9,9 +9,16 @@ namespace Dns.СozyHome.Repository
 {
     public class CozyHomeRepository : ICozyHomeRepository
     {
+        private readonly Config _config;
+
+        public CozyHomeRepository(Config config)
+        {
+            _config = config;
+        }
+        
         public async Task<List<ICatalogItem>> GetCatalogItemsAsync(Guid parentId)
         {
-            await using var dbContext = new DnsСozyHomeContext();
+            await using var dbContext = new DnsСozyHomeContext(_config.DbConnectionString);
             var res = await dbContext.CatalogItems
                 .Where(item => item.ParentId == parentId)
                 .Select(item => new
@@ -38,7 +45,7 @@ namespace Dns.СozyHome.Repository
 
         public async Task<Good> GetGoodAsync(Guid id)
         {
-            await using var dbContext = new DnsСozyHomeContext();
+            await using var dbContext = new DnsСozyHomeContext(_config.DbConnectionString);
             var res = await dbContext.CatalogItems
                 .Where(item => item.Id == id)
                 .Include(item => item.GoodAdditionalInfo)
@@ -59,7 +66,7 @@ namespace Dns.СozyHome.Repository
 
         public async Task<byte[]> GetARModelAsync(Guid goodId)
         {
-            await using var dbContext = new DnsСozyHomeContext();
+            await using var dbContext = new DnsСozyHomeContext(_config.DbConnectionString);
             return await dbContext.GoodARModels
                 .Where(model => model.GoodId == goodId && model.ARModelType == 0)
                 .Select(model => model.Armodel)

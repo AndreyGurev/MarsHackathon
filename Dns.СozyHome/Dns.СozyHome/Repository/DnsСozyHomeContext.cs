@@ -5,8 +5,11 @@ namespace Dns.СozyHome.Repository
 {
     public partial class DnsСozyHomeContext : DbContext
     {
-        public DnsСozyHomeContext()
+        private readonly string _dbConnectionString;
+        
+        public DnsСozyHomeContext(string dbConnectionString)
         {
+            _dbConnectionString = dbConnectionString;
         }
 
         public DnsСozyHomeContext(DbContextOptions<DnsСozyHomeContext> options)
@@ -24,7 +27,7 @@ namespace Dns.СozyHome.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=192.168.43.146;Database=DnsСozyHome;User Id=sa;Password=1;");
+                optionsBuilder.UseSqlServer(_dbConnectionString);
             }
         }
 

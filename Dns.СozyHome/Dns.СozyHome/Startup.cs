@@ -30,6 +30,7 @@ namespace Dns.СozyHome
             services.AddControllers();
             services.AddSwaggerGen();
 
+            services.AddSingleton(new Config(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING")));
             services.AddSingleton<ICozyHomeRepository, CozyHomeRepository>();
             services.AddSingleton<CozyHomeManager, CozyHomeManager>();
         }

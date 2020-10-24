@@ -10,5 +10,6 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
+      - DB_CONNECTION_STRING=Server=192.168.43.146;Database=DnsСozyHome;User Id=sa;Password=1;
     volumes:
       - ~/.aspnet/https:/https:ro
