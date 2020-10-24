@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BCFD82543C31F0068AD28 /* BaseGateway.swift */; };
+		556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BCFDB2543C3280068AD28 /* CustomError.swift */; };
 		55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B5734E2543B63E00EE25CB /* AppDelegate.swift */; };
 		55B573512543B63E00EE25CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B573502543B63E00EE25CB /* ViewController.swift */; };
 		55B573532543B63E00EE25CB /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 55B573522543B63E00EE25CB /* Experience.rcproject */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		556BCFD82543C31F0068AD28 /* BaseGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGateway.swift; sourceTree = "<group>"; };
+		556BCFDB2543C3280068AD28 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		55B5734B2543B63E00EE25CB /* MarsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B5734E2543B63E00EE25CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B573502543B63E00EE25CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		556BCFD52543C1C90068AD28 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				556BCFDB2543C3280068AD28 /* CustomError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 		556BCFD72543C1DF0068AD28 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
+				556BCFD82543C31F0068AD28 /* BaseGateway.swift */,
 			);
 			path = Gateway;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B573512543B63E00EE25CB /* ViewController.swift in Sources */,
+				556BCFD92543C31F0068AD28 /* BaseGateway.swift in Sources */,
 				55B5734F2543B63E00EE25CB /* AppDelegate.swift in Sources */,
+				556BCFDC2543C3280068AD28 /* CustomError.swift in Sources */,
 				55B573532543B63E00EE25CB /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KZA6U37LX;
 				INFOPLIST_FILE = MarsIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,6 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KZA6U37LX;
 				INFOPLIST_FILE = MarsIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
