@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dns.СozyHome.Core;
-using Dns.СozyHome.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dns.СozyHome.Repository
@@ -17,10 +16,24 @@ namespace Dns.СozyHome.Repository
                 .Where(item => item.ParentId == parentId)
                 .Include(item => item.GoodAdditionalInfo)
                 .Include(item => item.GoodPrice)
-                .Include(item => item.CatalogItemImages)
+                .Select(item => new
+                {
+                    item,
+                    Preview = item.CatalogItemImages
+                        .Where(image => image.ImageIndex == 0)
+                        .Select(image => image.Image)
+                        .Single()
+                })
                 .ToListAsync();
 
-            return res.ConvertAll(ConvertToModel);
+            return res.ConvertAll(item =>
+                (ICatalogItem)(item.item.IsFolder switch
+                {
+                    true => new FolderCatalogItem(item.item.Id, item.item.ParentId, item.item.Name,
+                        item.Preview),
+                    false => new GoodCatalogItem(item.item.Id, item.item.ParentId, item.item.Name,
+                        item.item.GoodAdditionalInfo.IsAR, item.item.GoodPrice.Price, item.Preview)
+                }));
         }
 
         public async Task<Good> GetGoodAsync(Guid id)
@@ -39,7 +52,8 @@ namespace Dns.СozyHome.Repository
                 })
                 .SingleAsync();
 
-            return new Good(res.item.Id, res.item.ParentId, res.item.Name, res.item.GoodAdditionalInfo.IsAR, res.item.GoodPrice.Price,
+            return new Good(res.item.Id, res.item.ParentId, res.item.Name, res.item.GoodAdditionalInfo.IsAR,
+                res.item.GoodPrice.Price,
                 res.Images.ToList(), res.item.GoodAdditionalInfo.Description);
         }
 
@@ -51,14 +65,5 @@ namespace Dns.СozyHome.Repository
                 .Select(model => model.Armodel)
                 .SingleAsync();
         }
-
-        private ICatalogItem ConvertToModel(CatalogItem item) =>
-            item.IsFolder switch
-            {
-                true => new FolderCatalogItem(item.Id, item.ParentId, item.Name,
-                    item.CatalogItemImages.FirstOrDefault()?.Image),
-                false => new GoodCatalogItem(item.Id, item.ParentId, item.Name, item.GoodAdditionalInfo.IsAR,
-                    item.GoodPrice.Price, item.CatalogItemImages.FirstOrDefault()?.Image)
-            };
     }
 }
