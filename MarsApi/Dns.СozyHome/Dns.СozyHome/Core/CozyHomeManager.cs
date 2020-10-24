@@ -18,5 +18,8 @@ namespace Dns.СozyHome.Core
 
         public Task<Good> GetGoodAsync(Guid id) =>
             _repository.GetGoodAsync(id);
+
+        public Task<byte[]> GetARModelAsync(Guid goodId) =>
+            _repository.GetARModelAsync(goodId);
     }
 }

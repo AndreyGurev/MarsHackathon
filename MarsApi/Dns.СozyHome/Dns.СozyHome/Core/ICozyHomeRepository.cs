@@ -8,5 +8,6 @@ namespace Dns.СozyHome.Core
     {
         Task<List<ICatalogItem>> GetCatalogItemsAsync(Guid parentId); 
         Task<Good> GetGoodAsync(Guid id);
+        Task<byte[]> GetARModelAsync(Guid goodId);
     }
 }

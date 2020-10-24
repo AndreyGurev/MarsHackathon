@@ -37,6 +37,15 @@ namespace Dns.СozyHome.Repository
                 res.CatalogItemImages.Select(image => image.Image).ToList(), res.GoodAdditionalInfo.Description);
         }
 
+        public async Task<byte[]> GetARModelAsync(Guid goodId)
+        {
+            await using var dbContext = new DnsСozyHomeContext();
+            return await dbContext.GoodARModels
+                .Where(model => model.GoodId == goodId)
+                .Select(model => model.Armodel)
+                .SingleAsync();
+        }
+
         private ICatalogItem ConvertToModel(CatalogItem item) =>
             item.IsFolder switch
             {

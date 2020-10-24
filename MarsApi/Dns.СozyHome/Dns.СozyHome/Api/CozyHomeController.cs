@@ -27,5 +27,10 @@ namespace Dns.СozyHome.Api
         [Route("getGood")]
         public async Task<GoodView> GetGoodAsync(Guid id) =>
             new GoodView(await _manager.GetGoodAsync(id));
+
+        [HttpGet]
+        [Route("getARModel")]
+        public async Task<byte[]> GetARModelAsync(Guid goodId) =>
+            await _manager.GetARModelAsync(goodId);
     }
 }
