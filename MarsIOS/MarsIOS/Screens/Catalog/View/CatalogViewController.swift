@@ -34,6 +34,10 @@ final class CatalogViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.isHidden = true
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
         presenter.loadCatalog(id: categoryId)
     }
 
@@ -52,6 +56,11 @@ final class CatalogViewController: UIViewController {
 
 extension CatalogViewController: CatalogPresenterOutput {
     func presenterDidLoadItems() {
+        activityIndicator.stopAnimating()
+        if activityIndicator.superview != nil {
+            activityIndicator.removeFromSuperview()
+        }
+        
         collectionView.isHidden = false
         catalogTableViewManager.reloadData()
     }

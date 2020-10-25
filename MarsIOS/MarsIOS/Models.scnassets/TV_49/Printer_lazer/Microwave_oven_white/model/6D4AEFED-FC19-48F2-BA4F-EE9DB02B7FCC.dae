@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.90.1 commit date:2020-09-23, commit time:06:43, hash:3e85bb34d0d7</authoring_tool>
+    </contributor>
+    <created>2020-10-25T14:11:14</created>
+    <modified>2020-10-25T14:11:14</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="microwaveovenWHITE_001-effect">
+      <profile_COMMON>
+        <newparam sid="microwaveovenWHITE_jpg-surface">
+          <surface type="2D">
+            <init_from>microwaveovenWHITE_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="microwaveovenWHITE_jpg-sampler">
+          <sampler2D>
+            <source>microwaveovenWHITE_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="microwaveovenWHITE_jpg-sampler" texcoord="Microwave_oven_white-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="microwaveovenWHITE_side_001-effect">
+      <profile_COMMON>
+        <newparam sid="microwaveovenWHITE_side_jpg-surface">
+          <surface type="2D">
+            <init_from>microwaveovenWHITE_side_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="microwaveovenWHITE_side_jpg-sampler">
+          <sampler2D>
+            <source>microwaveovenWHITE_side_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="microwaveovenWHITE_side_jpg-sampler" texcoord="Microwave_oven_white-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_0_-_Default_001-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">1 1 1 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="black_legs_004-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0 0 0 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="microwaveovenWHITE_jpg" name="microwaveovenWHITE_jpg">
+      <init_from>microwaveovenWHITE.jpg</init_from>
+    </image>
+    <image id="microwaveovenWHITE_side_jpg" name="microwaveovenWHITE_side_jpg">
+      <init_from>microwaveovenWHITE_side.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="microwaveovenWHITE_001-material" name="microwaveovenWHITE.001">
+      <instance_effect url="#microwaveovenWHITE_001-effect"/>
+    </material>
+    <material id="microwaveovenWHITE_side_001-material" name="microwaveovenWHITE_side.001">
+      <instance_effect url="#microwaveovenWHITE_side_001-effect"/>
+    </material>
+    <material id="_0_-_Default_001-material" name="10 - Default.001">
+      <instance_effect url="#_0_-_Default_001-effect"/>
+    </material>
+    <material id="black_legs_004-material" name="black_legs.004">
+      <instance_effect url="#black_legs_004-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Microwave_oven_white_001-mesh" name="Microwave_oven_white.001">
+      <mesh>
+        <source id="Microwave_oven_white_001-mesh-positions">
+          <float_array id="Microwave_oven_white_001-mesh-positions-array" count="240">-258.5 -218.2712 8.730774 258.5 -218.2712 8.730774 -258.5 -218.2712 310 258.5 -218.2712 310 258.5 -218.2712 8.730774 258.5 237.5 8.730774 258.5 -218.2712 310 258.5 237.5 310 -258.5 -218.2712 310 258.5 -218.2712 310 -258.5 237.5 310 258.5 237.5 310 -258.5 -218.2712 8.730774 -258.5 237.5 8.730774 -258.5 -218.2712 310 -258.5 237.5 310 -258.5 -218.2712 8.730774 258.5 -218.2712 8.730774 -258.5 237.5 8.730774 258.5 237.5 8.730774 -258.5 237.5 8.730774 258.5 237.5 8.730774 -258.5 237.5 310 258.5 237.5 310 228.3164 -205.9512 0 246.1201 -205.9512 0 228.3164 -189.1946 0 246.1201 -189.1946 0 228.3164 -205.9512 10.47287 246.1201 -205.9512 10.47287 228.3164 -189.1946 10.47287 246.1201 -189.1946 10.47287 228.3164 206.0636 0 246.1201 206.0636 0 228.3164 222.8202 0 246.1201 222.8202 0 228.3164 206.0636 10.47287 246.1201 206.0636 10.47287 228.3164 222.8202 10.47287 246.1201 222.8202 10.47287 -246.3999 -205.9512 0 -228.5962 -205.9512 0 -246.3999 -189.1946 0 -228.5962 -189.1946 0 -246.3999 -205.9512 10.47287 -228.5962 -205.9512 10.47287 -246.3999 -189.1946 10.47287 -228.5962 -189.1946 10.47287 -246.3999 206.0636 0 -228.5962 206.0636 0 -246.3999 222.8202 0 -228.5962 222.8202 0 -246.3999 206.0636 10.47287 -228.5962 206.0636 10.47287 -246.3999 222.8202 10.47287 -228.5962 222.8202 10.47287 113.1775 -237.6498 30.64255 145.9306 -237.6498 30.64255 113.1775 -228.6431 25.94048 145.9306 -228.6431 25.94048 113.1775 -237.6498 286.8362 145.9306 -237.6498 286.8362 113.1775 -228.6431 291.5383 145.9306 -228.6431 291.5383 113.1775 -232.4998 22.15205 145.9306 -232.4998 22.15205 113.1775 -228.6431 22.15206 145.9306 -228.6431 22.15205 113.1775 -232.4998 296.721 145.9306 -232.4998 296.721 113.1775 -228.6431 296.721 145.9306 -228.6431 296.721 113.1775 -216.6431 25.94048 145.9306 -216.6431 25.94048 113.1775 -216.6431 291.5383 145.9306 -216.6431 291.5383 113.1775 -216.6431 22.15206 145.9306 -216.6431 22.15205 113.1775 -216.6431 296.721 145.9306 -216.6431 296.721</float_array>
+          <technique_common>
+            <accessor source="#Microwave_oven_white_001-mesh-positions-array" count="80" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Microwave_oven_white_001-mesh-normals">
+          <float_array id="Microwave_oven_white_001-mesh-normals-array" count="60">0 -1 0 1 0 0 0 0 1 -1 0 0 -2.41593e-7 2.47278e-6 -1 0 0 -1 -0.651215 -0.7308697 -0.2043249 0.6512295 -0.7308554 -0.2043294 0.6572961 -0.7320075 0.1792404 -0.6572961 -0.7320075 0.1792404 1 3.26588e-6 0 0 1 0 -1 -3.57755e-6 0 -1 3.72786e-6 0 0 -0.8550093 -0.5186127 0 -0.8550083 -0.5186145 0.6069015 -0.41219 0.6795367 -0.6069015 -0.41219 0.6795367 1 -2.61512e-6 0 -3.10582e-7 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Microwave_oven_white_001-mesh-normals-array" count="20" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Microwave_oven_white_001-mesh-map-0">
+          <float_array id="Microwave_oven_white_001-mesh-map-0-array" count="624">4.99576e-4 4.99606e-4 0.9995005 4.99606e-4 0.9995005 0.9995004 0.9995005 0.9995004 4.99576e-4 0.9995004 4.99576e-4 4.99606e-4 0 4.99576e-4 1 4.99517e-4 1 0.9995004 1 0.9995004 0 0.9995005 0 4.99576e-4 4.99815e-4 0.9995004 4.99517e-4 4.99755e-4 0.9995002 4.99547e-4 0.9995002 4.99547e-4 0.9995004 0.9995002 4.99815e-4 0.9995004 1 0.9995005 0 4.99457e-4 0 4.99457e-4 0 4.99457e-4 1 0.9995005 1 0.9995005 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 0 0 0 1 0 1 0 1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 0 1 0 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Microwave_oven_white_001-mesh-map-0-array" count="312" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Microwave_oven_white_001-mesh-vertices">
+          <input semantic="POSITION" source="#Microwave_oven_white_001-mesh-positions"/>
+        </vertices>
+        <triangles material="microwaveovenWHITE_001-material" count="2">
+          <input semantic="VERTEX" source="#Microwave_oven_white_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Microwave_oven_white_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Microwave_oven_white_001-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 3 0 2 3 0 3 2 0 4 0 0 5</p>
+        </triangles>
+        <triangles material="microwaveovenWHITE_side_001-material" count="50">
+          <input semantic="VERTEX" source="#Microwave_oven_white_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Microwave_oven_white_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Microwave_oven_white_001-mesh-map-0" offset="2" set="0"/>
+          <p>4 1 6 5 1 7 7 1 8 7 1 9 6 1 10 4 1 11 8 2 12 9 2 13 11 2 14 11 2 15 10 2 16 8 2 17 13 3 18 12 3 19 14 3 20 14 3 21 15 3 22 13 3 23 64 4 24 66 4 25 67 4 26 67 5 27 65 5 28 64 5 29 68 2 30 69 2 31 71 2 32 71 2 33 70 2 34 68 2 35 56 6 36 57 7 37 61 8 38 61 8 39 60 9 40 56 6 41 57 10 42 59 10 43 63 10 44 63 1 45 61 1 46 57 1 47 59 11 48 58 11 49 62 11 50 62 11 51 63 11 52 59 11 53 58 3 54 56 3 55 60 3 56 60 3 57 62 3 58 58 3 59 56 12 60 58 12 61 66 12 62 66 13 63 64 13 64 56 13 65 72 11 66 73 11 67 77 11 68 77 11 69 76 11 70 72 11 71 59 1 72 57 1 73 65 1 74 65 1 75 67 1 76 59 1 77 57 14 78 56 14 79 64 14 80 64 15 81 65 15 82 57 15 83 60 9 84 61 8 85 69 16 86 69 16 87 68 17 88 60 9 89 61 18 90 63 18 91 71 18 92 71 1 93 69 1 94 61 1 95 75 11 96 74 11 97 78 11 98 78 11 99 79 11 100 75 11 101 62 3 102 60 3 103 68 3 104 68 3 105 70 3 106 62 3 107 67 19 108 66 19 109 76 19 110 76 19 111 77 19 112 67 19 113 70 2 114 71 2 115 79 2 116 79 2 117 78 2 118 70 2 119 58 2 120 59 2 121 73 2 122 73 2 123 72 2 124 58 2 125 63 5 126 62 5 127 74 5 128 74 5 129 75 5 130 63 5 131 66 3 132 58 3 133 72 3 134 72 3 135 76 3 136 66 3 137 59 1 138 67 1 139 77 1 140 77 1 141 73 1 142 59 1 143 71 1 144 63 1 145 75 1 146 75 1 147 79 1 148 71 1 149 62 3 150 70 3 151 78 3 152 78 3 153 74 3 154 62 3 155</p>
+        </triangles>
+        <triangles material="_0_-_Default_001-material" count="4">
+          <input semantic="VERTEX" source="#Microwave_oven_white_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Microwave_oven_white_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Microwave_oven_white_001-mesh-map-0" offset="2" set="0"/>
+          <p>16 5 156 18 5 157 19 5 158 19 5 159 17 5 160 16 5 161 21 11 162 20 11 163 22 11 164 22 11 165 23 11 166 21 11 167</p>
+        </triangles>
+        <triangles material="black_legs_004-material" count="48">
+          <input semantic="VERTEX" source="#Microwave_oven_white_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Microwave_oven_white_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Microwave_oven_white_001-mesh-map-0" offset="2" set="0"/>
+          <p>24 5 168 26 5 169 27 5 170 27 5 171 25 5 172 24 5 173 28 2 174 29 2 175 31 2 176 31 2 177 30 2 178 28 2 179 24 0 180 25 0 181 29 0 182 29 0 183 28 0 184 24 0 185 25 1 186 27 1 187 31 1 188 31 1 189 29 1 190 25 1 191 27 11 192 26 11 193 30 11 194 30 11 195 31 11 196 27 11 197 26 3 198 24 3 199 28 3 200 28 3 201 30 3 202 26 3 203 32 5 204 34 5 205 35 5 206 35 5 207 33 5 208 32 5 209 36 2 210 37 2 211 39 2 212 39 2 213 38 2 214 36 2 215 32 0 216 33 0 217 37 0 218 37 0 219 36 0 220 32 0 221 33 1 222 35 1 223 39 1 224 39 1 225 37 1 226 33 1 227 35 11 228 34 11 229 38 11 230 38 11 231 39 11 232 35 11 233 34 3 234 32 3 235 36 3 236 36 3 237 38 3 238 34 3 239 40 5 240 42 5 241 43 5 242 43 5 243 41 5 244 40 5 245 44 2 246 45 2 247 47 2 248 47 2 249 46 2 250 44 2 251 40 0 252 41 0 253 45 0 254 45 0 255 44 0 256 40 0 257 41 1 258 43 1 259 47 1 260 47 1 261 45 1 262 41 1 263 43 11 264 42 11 265 46 11 266 46 11 267 47 11 268 43 11 269 42 3 270 40 3 271 44 3 272 44 3 273 46 3 274 42 3 275 48 5 276 50 5 277 51 5 278 51 5 279 49 5 280 48 5 281 52 2 282 53 2 283 55 2 284 55 2 285 54 2 286 52 2 287 48 0 288 49 0 289 53 0 290 53 0 291 52 0 292 48 0 293 49 1 294 51 1 295 55 1 296 55 1 297 53 1 298 49 1 299 51 11 300 50 11 301 54 11 302 54 11 303 55 11 304 51 11 305 50 3 306 48 3 307 52 3 308 52 3 309 54 3 310 50 3 311</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Microwave_oven_white" name="Microwave_oven_white" type="NODE">
+        <matrix sid="transform">-1.62921e-10 -0.001 0 0 0.001 -1.62921e-10 4.37114e-11 0 -4.37114e-11 0 0.001 0 0 0 0 1</matrix>
+        <instance_geometry url="#Microwave_oven_white_001-mesh" name="Microwave_oven_white">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="microwaveovenWHITE_001-material" target="#microwaveovenWHITE_001-material">
+                <bind_vertex_input semantic="Microwave_oven_white-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="microwaveovenWHITE_side_001-material" target="#microwaveovenWHITE_side_001-material">
+                <bind_vertex_input semantic="Microwave_oven_white-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_0_-_Default_001-material" target="#_0_-_Default_001-material">
+                <bind_vertex_input semantic="Microwave_oven_white-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="black_legs_004-material" target="#black_legs_004-material">
+                <bind_vertex_input semantic="Microwave_oven_white-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

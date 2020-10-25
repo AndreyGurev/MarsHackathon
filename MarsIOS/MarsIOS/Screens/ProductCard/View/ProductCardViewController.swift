@@ -12,7 +12,8 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
+
     @IBOutlet weak var arButton: UIButton!
 
     private lazy var presenter = ProductCardPresenter(output: self)
@@ -39,18 +40,10 @@ class ProductCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arButton.setImage(UIImage(named: "ArIconWhite")!, for: .normal)
-        arButton.imageView?.contentMode = .scaleAspectFit
-        arButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        arButton.layer.cornerRadius = arButton.bounds.width / 2
-        
-        buyButton.setImage(UIImage(named: "BuyBucketIcon")!, for: .normal)
-        buyButton.imageView?.contentMode = .scaleAspectFit
-        buyButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        buyButton.layer.cornerRadius = buyButton.bounds.width / 2
-        
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
+        
+        scrollView.isHidden = true
         
         presenter.loadItem(id: productId!)
     }
@@ -66,9 +59,15 @@ class ProductCardViewController: UIViewController {
             return
         }
         
+        arButton.setImage(UIImage(named: "ArIconWhite")!, for: .normal)
+        arButton.imageView?.contentMode = .scaleAspectFit
+        arButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        arButton.layer.cornerRadius = arButton.bounds.width / 2
+        
         scrollView.isHidden = false
     
         nameLabel.text = item.name
+        priceLabel.text = "\(String(format: "%g", item.price))₽"
         descriptionLabel.text = item.description
         if !item.isAr {
             arButton.isHidden = true
@@ -78,18 +77,21 @@ class ProductCardViewController: UIViewController {
         imageView.image = UIImage(data: imageData)
     }
     
-    @IBAction func onBuyTap(_ sender: Any) {
-        
-    }
-    
     @IBAction func onArTap(_ sender: Any) {
-        self.present(ARViewController.make(), animated: true, completion: nil)
+        self.present(ARViewController.make(id: presenter.item!.id), animated: true, completion: nil)
     }
 }
 
 extension ProductCardViewController: ProductCardPresenterOutput {
     func presenterDidLoadItems() {
         activityIndicator.stopAnimating()
+        if activityIndicator.superview != nil {
+            activityIndicator.removeFromSuperview()
+        }
+                
+        activityIndicator.stopAnimating()
+        scrollView.isHidden = false
+        
         showCard()
     }
 }

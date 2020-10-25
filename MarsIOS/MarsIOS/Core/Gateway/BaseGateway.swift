@@ -83,6 +83,19 @@ final class BaseGateway: NSObject {
             }
     }
     
+    public func getStrRequest(url: String, parameters: Parameters, completion: @escaping (String) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
+                
+        manager.request(baseApiUrl + url, parameters: parameters).responseString { responseString in
+                if (responseString.result.isFailure || responseString.result.value == nil) {
+                    error(CustomError.networkFail)
+                    return
+                }
+        
+                completion(responseString.value!)
+                finally?()
+        }
+    }
+    
     private func handleResponse(response: DataResponse<Any>, completion: @escaping (Any) -> (), error: @escaping (CustomError) -> (), finally: (() -> ())?) {
         
         switch response.result {

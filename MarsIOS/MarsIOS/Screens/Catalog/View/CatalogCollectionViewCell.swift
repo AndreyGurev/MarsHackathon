@@ -27,12 +27,16 @@ final class CatalogCollectionViewCell: UICollectionViewCell {
         let imageData = Data(base64Encoded: item.imgLink, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
         productImageView.image = UIImage(data: imageData)
         
+        productNameLabel.numberOfLines = 2
         if item.isFolder {
             productPriceLabel.text = ""
             productNameLabel.numberOfLines = 3
+            productNameLabel.textAlignment = .center
         } else {
-            arEnableImageView.image = UIImage(named: "ArIcon")
-            productPriceLabel.text = "\(item.price)₽"
+            if (item.isAr) {
+                arEnableImageView.image = UIImage(named: "ArIcon")
+            }
+            productPriceLabel.text = "\(String(format: "%g", item.price))₽"
         }
         
         productNameLabel.text = item.name

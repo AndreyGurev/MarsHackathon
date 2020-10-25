@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.90.1 commit date:2020-09-23, commit time:06:43, hash:3e85bb34d0d7</authoring_tool>
+    </contributor>
+    <created>2020-10-25T11:53:40</created>
+    <modified>2020-10-25T11:53:40</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="grey_technics_040-effect">
+      <profile_COMMON>
+        <newparam sid="grey_technics_jpg_008-surface">
+          <surface type="2D">
+            <init_from>grey_technics_jpg_008</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="grey_technics_jpg_008-sampler">
+          <sampler2D>
+            <source>grey_technics_jpg_008-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="grey_technics_jpg_008-sampler" texcoord="TV_32-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="tv_screen_003-effect">
+      <profile_COMMON>
+        <newparam sid="tv_face_jpg_001-surface">
+          <surface type="2D">
+            <init_from>tv_face_jpg_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="tv_face_jpg_001-sampler">
+          <sampler2D>
+            <source>tv_face_jpg_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="tv_face_jpg_001-sampler" texcoord="TV_32-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="grey_technics_jpg_008" name="grey_technics_jpg_008">
+      <init_from>grey_technics.jpg.008.jpg</init_from>
+    </image>
+    <image id="tv_face_jpg_001" name="tv_face_jpg_001">
+      <init_from>tv_face.jpg.001.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="grey_technics_040-material" name="grey_technics.040">
+      <instance_effect url="#grey_technics_040-effect"/>
+    </material>
+    <material id="tv_screen_003-material" name="tv_screen.003">
+      <instance_effect url="#tv_screen_003-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="TV_32_001-mesh" name="TV_32.001">
+      <mesh>
+        <source id="TV_32_001-mesh-positions">
+          <float_array id="TV_32_001-mesh-positions-array" count="144">-725 -424.9999 -18.10066 725 -424.9999 -18.10066 -725 424.9999 -18.10066 725 424.9999 -18.10066 -725 -425 30 725 -425 30 -725 425 30 725 425 30 -690 -424.9996 -18.10065 -690 389.9999 -18.10066 690 389.9999 -18.10066 690 -424.9996 -18.10065 -640 -374.9996 -101.5659 -640 339.9999 -101.566 640 339.9999 -101.566 640 -374.9996 -101.5659 -134.4406 -513.9831 -80.97798 134.4406 -513.9831 -80.97798 -109.9635 -513.9831 -149.8405 109.9635 -513.9831 -149.8405 -99.23875 -332.775 -34.73072 99.23875 -332.775 -34.73072 -88.86514 -332.775 -71.17588 88.86514 -332.775 -71.17588 -379.5548 -536.8016 86.24103 379.5548 -536.8016 86.24103 -341.5994 -536.8016 -173.4061 341.5992 -536.8016 -173.4061 -379.5548 -507.6943 86.24103 379.5548 -507.6943 86.24103 -341.5994 -507.6943 -173.4061 341.5992 -507.6943 -173.4061 -725 -425 30 725 -425 30 -725 425 30 725 425 30 -700 -400 30 700 -400 30 700 400 30 -700 400 30 -700 -400 25 700 -400 25 700 400 25 -700 400 25 -700 -400 25 700 -400 25 700 400 25 -700 400 25</float_array>
+          <technique_common>
+            <accessor source="#TV_32_001-mesh-positions-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="TV_32_001-mesh-normals">
+          <float_array id="TV_32_001-mesh-normals-array" count="141">0 -1.49387e-7 -1 0 -1 -3.58444e-6 1 0 0 0 1 -3.58444e-6 -1 0 0 3.42353e-7 0 -1 0 0 -1 0 0 -1 0 0.04223138 -0.9991079 -0.8578516 0 -0.5138975 0 0.8578521 -0.5138969 0.8578519 0 -0.5138971 0 -0.857852 -0.5138971 0 -1 0 0 1 -2.02507e-7 0 -0.2472898 0.9689416 0.7536751 -0.5406196 0.3737704 0.4413952 0.7378867 -0.5105816 0.5836218 0.5438856 0.6029711 0 0.3982089 -0.9172948 -0.7536751 -0.5406196 0.3737704 -0.4413952 0.7378867 -0.5105816 -0.4846529 -0.4440312 -0.7536231 0 -1 -3.17097e-7 0 1 -3.5233e-7 0 0 1 0.9894838 0 -0.1446442 -0.9894839 0 -0.1446432 0 1 0 0 -1.49387e-7 -1 0 -1 -1.79222e-6 0 1 -1.79222e-6 0 0 -1 -3.42353e-7 0 -1 0 0.04207694 -0.9991144 -0.8578519 0 -0.513897 0 0.8578518 -0.5138971 0.8578516 0 -0.5138975 0 -0.8578514 -0.5138978 0 -1 -9.02748e-7 0 -0.2472897 0.9689417 0.4846529 -0.4440312 -0.7536231 0 0.3982088 -0.9172948 -0.5836218 0.5438856 0.6029711 0 -1 3.5233e-7 0 1 0 -0.9894839 0 -0.1446437</float_array>
+          <technique_common>
+            <accessor source="#TV_32_001-mesh-normals-array" count="47" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="TV_32_001-mesh-map-0">
+          <float_array id="TV_32_001-mesh-map-0-array" count="408">1 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 0 1 1 0 0 0 0 0 1 0 1 1 1 0 1 0 0 1 1 1 1 1 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 1 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 1 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 1 1 0 1 0 0 1 1 1 1 1 0 0 0 1 0 1 1 0 0 0 0 0 1 1 1 0 1 0 0 1 1 1 1 1 0 0 0 1 0 1 1 1 0 1 0 0 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 1 0 0 1 0 0 0 1 1 1 1 1 0 0 1 0 1 1 1 0 0 0 0 0 1 1 0 1 0 0 0 1 1 0 1 0 0 1 0 1 1 0 1 1 0 1 1 0 1 0 0 1 0 1 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 0 0 1 0 1 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 0 0 0 1 1 1 1 1 0 0 1 0 1 1 1 0 0 0 0 0 1 1 0 1 0 0 0 1 1 1 1 1 0 0 1 0 1 1 1 0 0 0 0 0 1 0.9995004 4.99487e-4 4.99636e-4 0.9995005 4.99517e-4 4.99904e-4 0.9995004 4.99487e-4 0.9995005 0.9995001 4.99636e-4 0.9995005</float_array>
+          <technique_common>
+            <accessor source="#TV_32_001-mesh-map-0-array" count="204" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="TV_32_001-mesh-vertices">
+          <input semantic="POSITION" source="#TV_32_001-mesh-positions"/>
+        </vertices>
+        <triangles material="grey_technics_040-material" count="66">
+          <input semantic="VERTEX" source="#TV_32_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#TV_32_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#TV_32_001-mesh-map-0" offset="2" set="0"/>
+          <p>13 0 0 15 0 1 12 0 2 1 1 3 4 1 4 0 1 5 3 2 6 5 2 7 1 2 8 2 3 9 7 3 10 3 3 11 0 4 12 6 4 13 2 4 14 0 5 15 9 5 16 8 5 17 3 6 18 9 6 19 2 6 20 1 7 21 10 7 22 3 7 23 0 8 24 11 8 25 1 8 26 9 9 27 12 9 28 8 9 29 10 10 30 13 10 31 9 10 32 11 11 33 14 11 34 10 11 35 8 12 36 15 12 37 11 12 38 18 13 39 17 13 40 16 13 41 21 14 42 22 14 43 20 14 44 17 15 45 20 15 46 16 15 47 17 16 48 23 17 49 21 18 50 18 19 51 23 19 52 19 19 53 16 20 54 22 21 55 18 22 56 24 23 57 27 23 58 25 23 59 28 24 60 31 24 61 30 24 62 25 25 63 28 25 64 24 25 65 27 26 66 29 26 67 25 26 68 26 6 69 31 6 70 27 6 71 24 27 72 30 27 73 26 27 74 33 25 75 36 25 76 32 25 77 35 25 78 37 25 79 33 25 80 34 25 81 38 25 82 35 25 83 32 25 84 39 25 85 34 25 86 37 28 87 40 28 88 36 28 89 38 4 90 41 4 91 37 4 92 39 13 93 42 13 94 38 13 95 36 2 96 43 2 97 39 2 98 13 29 99 14 29 100 15 29 101 1 30 102 5 30 103 4 30 104 3 2 105 7 2 106 5 2 107 2 31 108 6 31 109 7 31 110 0 4 111 4 4 112 6 4 113 0 32 114 2 32 115 9 32 116 3 6 117 10 6 118 9 6 119 1 33 120 11 33 121 10 33 122 0 34 123 8 34 124 11 34 125 9 35 126 13 35 127 12 35 128 10 36 129 14 36 130 13 36 131 11 37 132 15 37 133 14 37 134 8 38 135 12 38 136 15 38 137 18 39 138 19 39 139 17 39 140 21 28 141 23 28 142 22 28 143 17 40 144 21 40 145 20 40 146 17 16 147 19 41 148 23 17 149 18 42 150 22 42 151 23 42 152 16 20 153 20 43 154 22 21 155 24 44 156 26 44 157 27 44 158 28 45 159 29 45 160 31 45 161 25 25 162 29 25 163 28 25 164 27 26 165 31 26 166 29 26 167 26 6 168 30 6 169 31 6 170 24 46 171 28 46 172 30 46 173 33 25 174 37 25 175 36 25 176 35 25 177 38 25 178 37 25 179 34 25 180 39 25 181 38 25 182 32 25 183 36 25 184 39 25 185 37 28 186 41 28 187 40 28 188 38 4 189 42 4 190 41 4 191 39 13 192 43 13 193 42 13 194 36 2 195 40 2 196 43 2 197</p>
+        </triangles>
+        <triangles material="tv_screen_003-material" count="2">
+          <input semantic="VERTEX" source="#TV_32_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#TV_32_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#TV_32_001-mesh-map-0" offset="2" set="0"/>
+          <p>45 25 198 47 25 199 44 25 200 45 25 201 46 25 202 47 25 203</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="TV_32" name="TV_32" type="NODE">
+        <matrix sid="transform">-2.22167e-11 1.45391e-10 5.08259e-4 0 5.08259e-4 -1.53581e-11 2.22167e-11 0 1.51473e-11 5.15334e-4 -1.43395e-10 0.2766324 0 0 0 1</matrix>
+        <instance_geometry url="#TV_32_001-mesh" name="TV_32">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="grey_technics_040-material" target="#grey_technics_040-material">
+                <bind_vertex_input semantic="TV_32-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="tv_screen_003-material" target="#tv_screen_003-material">
+                <bind_vertex_input semantic="TV_32-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.90.1 commit date:2020-09-23, commit time:06:43, hash:3e85bb34d0d7</authoring_tool>
+    </contributor>
+    <created>2020-10-25T13:02:28</created>
+    <modified>2020-10-25T13:02:28</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Wood_box_002-effect">
+      <profile_COMMON>
+        <newparam sid="Wood_box_001_jpg-surface">
+          <surface type="2D">
+            <init_from>Wood_box_001_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Wood_box_001_jpg-sampler">
+          <sampler2D>
+            <source>Wood_box_001_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Wood_box_001_jpg-sampler" texcoord="Cook_top_electro_oven-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="cooktopelectrBLACK_top_001-effect">
+      <profile_COMMON>
+        <newparam sid="cooktopelectrBLACK_top_jpg-surface">
+          <surface type="2D">
+            <init_from>cooktopelectrBLACK_top_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="cooktopelectrBLACK_top_jpg-sampler">
+          <sampler2D>
+            <source>cooktopelectrBLACK_top_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="cooktopelectrBLACK_top_jpg-sampler" texcoord="Cook_top_electro_oven-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="grayblack_BT_002-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.2431373 0.2431373 0.2431373 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="white_006-effect">
+      <profile_COMMON>
+        <newparam sid="white_jpg_002-surface">
+          <surface type="2D">
+            <init_from>white_jpg_002</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="white_jpg_002-sampler">
+          <sampler2D>
+            <source>white_jpg_002-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="white_jpg_002-sampler" texcoord="Cook_top_electro_oven-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="dux_shkaf_white_002-effect">
+      <profile_COMMON>
+        <newparam sid="dux_shkaf_white_jpg-surface">
+          <surface type="2D">
+            <init_from>dux_shkaf_white_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="dux_shkaf_white_jpg-sampler">
+          <sampler2D>
+            <source>dux_shkaf_white_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="dux_shkaf_white_jpg-sampler" texcoord="Cook_top_electro_oven-mesh-map-0"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="Wood_box_001_jpg" name="Wood_box_001_jpg">
+      <init_from>Wood_box.001.jpg</init_from>
+    </image>
+    <image id="cooktopelectrBLACK_top_jpg" name="cooktopelectrBLACK_top_jpg">
+      <init_from>cooktopelectrBLACK_top.jpg</init_from>
+    </image>
+    <image id="dux_shkaf_white_jpg" name="dux_shkaf_white_jpg">
+      <init_from>dux_shkaf_white.jpg</init_from>
+    </image>
+    <image id="white_jpg_002" name="white_jpg_002">
+      <init_from>white.jpg.002.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Wood_box_002-material" name="Wood_box.002">
+      <instance_effect url="#Wood_box_002-effect"/>
+    </material>
+    <material id="cooktopelectrBLACK_top_001-material" name="cooktopelectrBLACK_top.001">
+      <instance_effect url="#cooktopelectrBLACK_top_001-effect"/>
+    </material>
+    <material id="grayblack_BT_002-material" name="grayblack_BT.002">
+      <instance_effect url="#grayblack_BT_002-effect"/>
+    </material>
+    <material id="white_006-material" name="white.006">
+      <instance_effect url="#white_006-effect"/>
+    </material>
+    <material id="dux_shkaf_white_002-material" name="dux_shkaf_white.002">
+      <instance_effect url="#dux_shkaf_white_002-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cook_top_electro_oven_001-mesh" name="Cook_top_electro+oven.001">
+      <mesh>
+        <source id="Cook_top_electro_oven_001-mesh-positions">
+          <float_array id="Cook_top_electro_oven_001-mesh-positions-array" count="216">-350 -325 0 350 -325 0 -350 325 0 350 325 0 -350 -325 890 350 -325 890 -350 325 890 350 325 890 -293.7093 -262.8418 889.3255 -282.4748 -262.8418 889.3255 285.0561 -262.8418 889.3255 296.2907 -262.8418 889.3255 -293.7093 -249.4007 889.3255 -282.4748 -249.4007 889.3255 285.0561 -249.4007 889.3255 296.2907 -249.4007 889.3255 -293.7093 243.7171 889.3255 -282.4747 243.7171 889.3255 285.0562 243.717 889.3255 296.2908 243.717 889.3255 -293.7093 257.1582 889.3255 -282.4747 257.1582 889.3255 285.0562 257.1582 889.3255 296.2908 257.1582 889.3255 -290.8825 -260.3504 894.3255 -279.7557 -260.3504 894.3255 282.337 -260.3504 894.3255 293.4639 -260.3504 894.3255 -290.8825 -247.0381 894.3255 -282.4748 -249.4007 894.3255 285.0561 -249.4007 894.3255 293.4639 -247.0381 894.3255 -290.8825 241.3545 894.3255 -282.4747 243.7171 894.3255 285.0562 243.717 894.3255 293.464 241.3544 894.3255 -290.8825 254.6668 894.3255 -279.7556 254.6668 894.3255 282.337 254.6668 894.3255 293.464 254.6668 894.3255 -279.175 -246.5335 892.2255 281.7564 -246.5336 892.2255 -279.175 240.85 892.2255 281.7564 240.8499 892.2255 -235.9832 -363.9638 620.5239 -239.1758 -372.1811 620.5239 235.9832 -363.9639 620.5239 239.1758 -372.1811 620.5239 -235.9832 -363.9638 645.5239 -239.1758 -372.1811 645.5239 235.9832 -363.9639 645.5239 239.1758 -372.1811 645.5239 -263.3616 -312.4864 620.5239 -263.3616 -327.4864 620.5239 -263.3616 -327.4864 645.5239 -263.3616 -312.4864 645.5239 263.3616 -327.4864 620.5239 263.3616 -312.4864 620.5239 263.3616 -312.4864 645.5239 263.3616 -327.4864 645.5239 -300 -334.4052 247.1354 300 -334.4053 247.1354 -300 -334.4053 797.1354 300 -334.4053 797.1354 -300 -324.4052 247.1354 300 -324.4053 247.1354 -300 -324.4053 797.1354 300 -324.4053 797.1354 -300 -334.4052 247.1354 300 -334.4053 247.1354 -300 -334.4053 797.1354 300 -334.4053 797.1354</float_array>
+          <technique_common>
+            <accessor source="#Cook_top_electro_oven_001-mesh-positions-array" count="72" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cook_top_electro_oven_001-mesh-normals">
+          <float_array id="Cook_top_electro_oven_001-mesh-normals-array" count="168">0 0 -1 0 0 1 0 -1 0 1 0 0 0 1 0 -1 0 0 1.74498e-5 0 1 0 -0.8950418 0.4459823 0 -0.8950423 0.4459815 0 -0.8950408 0.4459846 0 -0.8950424 0.445981 0 -0.8950441 0.4459777 0 -0.8950431 0.4459799 0.8705117 0 0.492148 0.8705135 0 0.4921447 0.8705096 -2.58593e-7 0.4921516 0.8705127 -1.74061e-7 0.4921461 0.8705074 0 0.4921555 0.8705103 0 0.4921501 0 0.8950425 0.4459808 0 0.8950399 0.4459862 0 0.8950424 0.4459812 0 0.8950401 0.4459856 0 0.8950434 0.4459793 -0.8705117 0 0.492148 -0.8705135 0 0.4921447 -0.8705126 0 0.4921463 -0.8705073 0 0.4921557 -0.8705095 0 0.4921519 -0.8705157 0 0.4921408 0 0.5909091 0.8067382 0 0.5908902 0.8067521 0.5368967 0 0.8436481 0.536924 0 0.8436307 -0.5368844 0 0.8436558 -0.5369437 0 0.8436181 2.42089e-7 -0.590911 0.8067368 0 -0.5908989 0.8067457 0 0 -1 1.33509e-7 0 -1 0 0 1 2.58642e-7 1 0 9.51172e-6 0 -1 -0.8794881 -0.475921 0 -0.8794885 -0.4759204 0 0.8828949 0.4695706 0 0.8828955 0.4695695 0 -0.8828955 0.4695695 0 0.8794881 -0.475921 0 0.8794885 -0.4759204 0 0 1 2.84091e-7 2.03451e-7 1 0 0 0 -1 0 0 -1 -2.03451e-7 -1 0 0 -1 -2.84091e-7</float_array>
+          <technique_common>
+            <accessor source="#Cook_top_electro_oven_001-mesh-normals-array" count="56" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cook_top_electro_oven_001-mesh-map-0">
+          <float_array id="Cook_top_electro_oven_001-mesh-map-0-array" count="720">1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0.005285859 0.005286097 0.02412623 0.005286097 0.01952207 0.02632218 0.01952207 0.02632218 0.005285859 0.03086107 0.005285859 0.005286097 0.02412623 0.005286097 0.9758735 0.005285859 0.9804777 0.02632188 0.9804777 0.02632188 0.01952207 0.02632218 0.02412623 0.005286097 0.9758735 0.005285859 0.9947139 0.005285859 0.9947139 0.0308609 0.9947139 0.0308609 0.9804777 0.02632188 0.9758735 0.005285859 0.005285859 0.03086107 0.01952207 0.02632218 0.01952219 0.9736779 0.01952219 0.9736779 0.005286097 0.969139 0.005285859 0.03086107 0.02510935 0.03183037 0.9748904 0.03183013 0.9748906 0.9681695 0.9748906 0.9681695 0.02510946 0.9681698 0.02510935 0.03183037 0.9804777 0.02632188 0.9947139 0.0308609 0.994714 0.9691388 0.994714 0.9691388 0.9804778 0.9736777 0.9804777 0.02632188 0.005286097 0.969139 0.01952219 0.9736779 0.02412641 0.9947142 0.02412641 0.9947142 0.005286097 0.9947142 0.005286097 0.969139 0.01952219 0.9736779 0.9804778 0.9736777 0.9758737 0.9947139 0.9758737 0.9947139 0.02412641 0.9947142 0.01952219 0.9736779 0.9804778 0.9736777 0.994714 0.9691388 0.994714 0.9947139 0.994714 0.9947139 0.9758737 0.9947139 0.9804778 0.9736777 4.99547e-4 4.99815e-4 0.01952207 4.99785e-4 0.02412623 0.005286097 0.02412623 0.005286097 0.005285859 0.005286097 4.99547e-4 4.99815e-4 0.01952207 4.99785e-4 0.9804776 4.99547e-4 0.9758735 0.005285859 0.9758735 0.005285859 0.02412623 0.005286097 0.01952207 4.99785e-4 0.9804776 4.99547e-4 0.9995002 4.99517e-4 0.9947139 0.005285859 0.9947139 0.005285859 0.9758735 0.005285859 0.9804776 4.99547e-4 0.9995002 4.99517e-4 0.9995003 0.02632188 0.9947139 0.0308609 0.9947139 0.0308609 0.9947139 0.005285859 0.9995002 4.99517e-4 0.9995003 0.02632188 0.9995004 0.9736776 0.994714 0.9691388 0.994714 0.9691388 0.9947139 0.0308609 0.9995003 0.02632188 0.9995004 0.9736776 0.9995005 0.9995002 0.994714 0.9947139 0.994714 0.9947139 0.994714 0.9691388 0.9995004 0.9736776 0.9995005 0.9995002 0.9804779 0.9995002 0.9758737 0.9947139 0.9758737 0.9947139 0.994714 0.9947139 0.9995005 0.9995002 0.9804779 0.9995002 0.01952224 0.9995005 0.02412641 0.9947142 0.02412641 0.9947142 0.9758737 0.9947139 0.9804779 0.9995002 0.01952224 0.9995005 4.99785e-4 0.9995005 0.005286097 0.9947142 0.005286097 0.9947142 0.02412641 0.9947142 0.01952224 0.9995005 4.99785e-4 0.9995005 4.99755e-4 0.973678 0.005286097 0.969139 0.005286097 0.969139 0.005286097 0.9947142 4.99785e-4 0.9995005 4.99755e-4 0.973678 4.99576e-4 0.02632224 0.005285859 0.03086107 0.005285859 0.03086107 0.005286097 0.969139 4.99755e-4 0.973678 4.99576e-4 0.02632224 4.99547e-4 4.99815e-4 0.005285859 0.005286097 0.005285859 0.005286097 0.005285859 0.03086107 4.99576e-4 0.02632224 0.01952207 0.02632218 0.9804777 0.02632188 0.9748904 0.03183013 0.9748904 0.03183013 0.02510935 0.03183037 0.01952207 0.02632218 0.01952219 0.9736779 0.01952207 0.02632218 0.02510935 0.03183037 0.02510935 0.03183037 0.02510946 0.9681698 0.01952219 0.9736779 0.9804777 0.02632188 0.9804778 0.9736777 0.9748906 0.9681695 0.9748906 0.9681695 0.9748904 0.03183013 0.9804777 0.02632188 0.9804778 0.9736777 0.01952219 0.9736779 0.02510946 0.9681698 0.02510946 0.9681698 0.9748906 0.9681695 0.9804778 0.9736777 4.99547e-4 4.99815e-4 4.99576e-4 0.02632224 0.01952207 0.02632218 0.01952207 0.02632218 0.01952207 4.99785e-4 4.99547e-4 4.99815e-4 0.01952207 4.99785e-4 0.01952207 0.02632218 0.9804777 0.02632188 0.9804777 0.02632188 0.9804776 4.99547e-4 0.01952207 4.99785e-4 0.9804776 4.99547e-4 0.9804777 0.02632188 0.9995003 0.02632188 0.9995003 0.02632188 0.9995002 4.99517e-4 0.9804776 4.99547e-4 4.99576e-4 0.02632224 4.99755e-4 0.973678 0.01952219 0.9736779 0.01952219 0.9736779 0.01952207 0.02632218 4.99576e-4 0.02632224 0.01952207 0.02632218 0.01952219 0.9736779 0.9804778 0.9736777 0.9804778 0.9736777 0.9804777 0.02632188 0.01952207 0.02632218 0.9804777 0.02632188 0.9804778 0.9736777 0.9995004 0.9736776 0.9995004 0.9736776 0.9995003 0.02632188 0.9804777 0.02632188 4.99755e-4 0.973678 4.99785e-4 0.9995005 0.01952224 0.9995005 0.01952224 0.9995005 0.01952219 0.9736779 4.99755e-4 0.973678 0.01952219 0.9736779 0.01952224 0.9995005 0.9804779 0.9995002 0.9804779 0.9995002 0.9804778 0.9736777 0.01952219 0.9736779 0.9804778 0.9736777 0.9804779 0.9995002 0.9995005 0.9995002 0.9995005 0.9995002 0.9995004 0.9736776 0.9804778 0.9736777 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 1 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 0 1 0 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 1 1 1 1 0 0 0 0 0 0 1 1 1 1 0 1 1 0 1 0 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Cook_top_electro_oven_001-mesh-map-0-array" count="360" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cook_top_electro_oven_001-mesh-vertices">
+          <input semantic="POSITION" source="#Cook_top_electro_oven_001-mesh-positions"/>
+        </vertices>
+        <triangles material="Wood_box_002-material" count="12">
+          <input semantic="VERTEX" source="#Cook_top_electro_oven_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cook_top_electro_oven_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cook_top_electro_oven_001-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 2 0 1 3 0 2 3 0 3 1 0 4 0 0 5 4 1 6 5 1 7 7 1 8 7 1 9 6 1 10 4 1 11 0 2 12 1 2 13 5 2 14 5 2 15 4 2 16 0 2 17 1 3 18 3 3 19 7 3 20 7 3 21 5 3 22 1 3 23 3 4 24 2 4 25 6 4 26 6 4 27 7 4 28 3 4 29 2 5 30 0 5 31 4 5 32 4 5 33 6 5 34 2 5 35</p>
+        </triangles>
+        <triangles material="cooktopelectrBLACK_top_001-material" count="50">
+          <input semantic="VERTEX" source="#Cook_top_electro_oven_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cook_top_electro_oven_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cook_top_electro_oven_001-mesh-map-0" offset="2" set="0"/>
+          <p>24 1 36 25 1 37 29 1 38 29 1 39 28 1 40 24 1 41 25 1 42 26 1 43 30 1 44 30 1 45 29 1 46 25 1 47 26 1 48 27 1 49 31 1 50 31 1 51 30 1 52 26 1 53 28 1 54 29 1 55 33 1 56 33 1 57 32 1 58 28 1 59 40 1 60 41 1 61 43 1 62 43 1 63 42 1 64 40 1 65 30 1 66 31 1 67 35 1 68 35 1 69 34 1 70 30 1 71 32 1 72 33 1 73 37 1 74 37 1 75 36 1 76 32 1 77 33 1 78 34 1 79 38 1 80 38 1 81 37 1 82 33 1 83 34 6 84 35 6 85 39 6 86 39 1 87 38 1 88 34 1 89 8 7 90 9 7 91 25 7 92 25 8 93 24 8 94 8 8 95 9 9 96 10 9 97 26 9 98 26 10 99 25 10 100 9 10 101 10 11 102 11 11 103 27 11 104 27 12 105 26 12 106 10 12 107 11 13 108 15 13 109 31 13 110 31 14 111 27 14 112 11 14 113 15 15 114 19 15 115 35 15 116 35 16 117 31 16 118 15 16 119 19 17 120 23 17 121 39 17 122 39 18 123 35 18 124 19 18 125 23 19 126 22 19 127 38 19 128 38 20 129 39 20 130 23 20 131 22 21 132 21 21 133 37 21 134 37 22 135 38 22 136 22 22 137 21 23 138 20 23 139 36 23 140 36 20 141 37 20 142 21 20 143 20 24 144 16 24 145 32 24 146 32 25 147 36 25 148 20 25 149 16 26 150 12 26 151 28 26 152 28 27 153 32 27 154 16 27 155 12 28 156 8 28 157 24 28 158 24 29 159 28 29 160 12 29 161 29 30 162 30 30 163 41 30 164 41 31 165 40 31 166 29 31 167 33 32 168 29 32 169 40 32 170 40 33 171 42 33 172 33 33 173 30 34 174 34 34 175 43 34 176 43 35 177 41 35 178 30 35 179 34 36 180 33 36 181 42 36 182 42 37 183 43 37 184 34 37 185</p>
+        </triangles>
+        <triangles material="grayblack_BT_002-material" count="18">
+          <input semantic="VERTEX" source="#Cook_top_electro_oven_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cook_top_electro_oven_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cook_top_electro_oven_001-mesh-map-0" offset="2" set="0"/>
+          <p>8 0 186 12 0 187 13 0 188 13 0 189 9 0 190 8 0 191 9 0 192 13 0 193 14 0 194 14 0 195 10 0 196 9 0 197 10 0 198 14 0 199 15 0 200 15 0 201 11 0 202 10 0 203 12 0 204 16 0 205 17 0 206 17 0 207 13 0 208 12 0 209 13 38 210 17 38 211 18 38 212 18 0 213 14 0 214 13 0 215 14 0 216 18 0 217 19 0 218 19 0 219 15 0 220 14 0 221 16 0 222 20 0 223 21 0 224 21 0 225 17 0 226 16 0 227 17 0 228 21 0 229 22 0 230 22 39 231 18 39 232 17 39 233 18 0 234 22 0 235 23 0 236 23 0 237 19 0 238 18 0 239</p>
+        </triangles>
+        <triangles material="white_006-material" count="38">
+          <input semantic="VERTEX" source="#Cook_top_electro_oven_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cook_top_electro_oven_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cook_top_electro_oven_001-mesh-map-0" offset="2" set="0"/>
+          <p>44 0 240 46 0 241 47 0 242 47 0 243 45 0 244 44 0 245 48 1 246 49 1 247 51 1 248 51 40 249 50 40 250 48 40 251 52 5 252 53 5 253 54 5 254 54 5 255 55 5 256 52 5 257 45 2 258 47 2 259 51 2 260 51 2 261 49 2 262 45 2 263 56 3 264 57 3 265 58 3 266 58 3 267 59 3 268 56 3 269 46 41 270 44 41 271 48 41 272 48 41 273 50 41 274 46 41 275 44 0 276 45 0 277 53 0 278 53 42 279 52 42 280 44 42 281 45 43 282 49 43 283 54 43 284 54 44 285 53 44 286 45 44 287 49 1 288 48 1 289 55 1 290 55 1 291 54 1 292 49 1 293 48 45 294 44 45 295 52 45 296 52 46 297 55 46 298 48 46 299 47 0 300 46 0 301 57 0 302 57 0 303 56 0 304 47 0 305 46 47 306 50 47 307 58 47 308 58 47 309 57 47 310 46 47 311 50 1 312 51 1 313 59 1 314 59 1 315 58 1 316 50 1 317 51 48 318 47 48 319 56 48 320 56 49 321 59 49 322 51 49 323 64 50 324 66 50 325 67 50 326 67 51 327 65 51 328 64 51 329 64 52 330 65 52 331 69 52 332 69 53 333 68 53 334 64 53 335 65 3 336 67 3 337 71 3 338 71 3 339 69 3 340 65 3 341 67 1 342 66 1 343 70 1 344 70 1 345 71 1 346 67 1 347 66 5 348 64 5 349 68 5 350 68 5 351 70 5 352 66 5 353</p>
+        </triangles>
+        <triangles material="dux_shkaf_white_002-material" count="2">
+          <input semantic="VERTEX" source="#Cook_top_electro_oven_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cook_top_electro_oven_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cook_top_electro_oven_001-mesh-map-0" offset="2" set="0"/>
+          <p>60 54 354 61 54 355 63 54 356 63 55 357 62 55 358 60 55 359</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Cook_top_electro_oven" name="Cook_top_electro+oven" type="NODE">
+        <matrix sid="transform">-1.62921e-10 -0.001 0 0 0.001 -1.62921e-10 0 0 0 0 0.001 0 0 0 0 1</matrix>
+        <instance_geometry url="#Cook_top_electro_oven_001-mesh" name="Cook_top_electro+oven">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Wood_box_002-material" target="#Wood_box_002-material">
+                <bind_vertex_input semantic="Cook_top_electro_oven-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="cooktopelectrBLACK_top_001-material" target="#cooktopelectrBLACK_top_001-material">
+                <bind_vertex_input semantic="Cook_top_electro_oven-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="grayblack_BT_002-material" target="#grayblack_BT_002-material">
+                <bind_vertex_input semantic="Cook_top_electro_oven-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="white_006-material" target="#white_006-material">
+                <bind_vertex_input semantic="Cook_top_electro_oven-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="dux_shkaf_white_002-material" target="#dux_shkaf_white_002-material">
+                <bind_vertex_input semantic="Cook_top_electro_oven-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

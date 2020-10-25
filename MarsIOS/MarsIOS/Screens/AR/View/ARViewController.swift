@@ -9,85 +9,152 @@ import UIKit
 import RealityKit
 import SceneKit
 import ARKit
+import NVActivityIndicatorView
 
-class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class ARViewController: UIViewController, NVActivityIndicatorViewable, ARSCNViewDelegate, ARSessionDelegate {
     private static var shared: ARViewController?
     
     @IBOutlet var arView: VirtualObjectARView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     
-    var screenCenter: CGPoint {
+    private var focusSquare = FocusSquare()
+    
+    private var loadedObjectsById: [String: VirtualObject] = [:]
+    private var currentObject: VirtualObject?
+    private var currentObjectId: String?
+
+    private var screenCenter: CGPoint {
         let bounds = arView.bounds
         return CGPoint(x: bounds.midX, y: bounds.midY)
     }
     
-    let updateQueue = DispatchQueue(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
-    
     private var session: ARSession {
         return arView.session
     }
+
+    private let updateQueue = DispatchQueue(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
     
-    static func make() -> ARViewController {
+    static func make(id: String) -> ARViewController {
         if shared == nil {
             shared = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ARVC") as? ARViewController
         }
+
+        if (shared!.currentObjectId != id) {
+            shared!.currentObjectId = id
+            shared!.loadObject(completion: {})
+        }
+        
         return shared!
     }
         
-    @IBAction func onAddTap(_ sender: Any) {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            self.updateFocusSquare(isObjectVisible: false)
+        }
+        
+        // If light estimation is enabled, update the intensity of the directional lights
+        if let lightEstimate = session.currentFrame?.lightEstimate {
+            arView.updateDirectionalLighting(intensity: lightEstimate.ambientIntensity, queue: updateQueue)
+        } else {
+            arView.updateDirectionalLighting(intensity: 1000, queue: updateQueue)
+        }
+    }
+    
+    func translate(_ object: VirtualObject, basedOn screenPos: CGPoint, infinitePlane: Bool, allowAnimation: Bool) {
+            guard let cameraTransform = arView.session.currentFrame?.camera.transform,
+                let result = arView.smartHitTest(
+                    screenPos,
+                    infinitePlane: infinitePlane,
+                    objectPosition: object.simdWorldPosition,
+                    allowedAlignments: object.allowedAlignments)
+                else { return }
+            
+            let planeAlignment: ARPlaneAnchor.Alignment
+            if let planeAnchor = result.anchor as? ARPlaneAnchor {
+                planeAlignment = planeAnchor.alignment
+            } else if result.type == .estimatedHorizontalPlane {
+                planeAlignment = .horizontal
+            } else if result.type == .estimatedVerticalPlane {
+                planeAlignment = .vertical
+            } else {
+                return
+            }
+
+        let transform = result.worldTransform
+        let isOnPlane = result.anchor is ARPlaneAnchor
+        object.setTransform(
+            transform,
+            relativeTo: arView.session.currentFrame!.camera,
+            smoothMovement: !isOnPlane,
+            alignment: planeAlignment,
+            allowAnimation: false
+        )
+    }
+    
+    func loadObject(completion: @escaping () -> ()) {
         let modelsURL = Bundle.main.url(forResource: "Models.scnassets", withExtension: nil)!
 
         let fileEnumerator = FileManager().enumerator(at: modelsURL, includingPropertiesForKeys: [])!
 
-        let a:[VirtualObject] = fileEnumerator.compactMap { element in
+        let modelsFromFile: [VirtualObject] = fileEnumerator.compactMap { element in
             let url = element as! URL
-
-            guard url.pathExtension == "scn" && !url.path.contains("lighting") else { return nil }
-
+            
+            let pathExtension = url.pathExtension
+            let name = url.deletingPathExtension().lastPathComponent
+            
+            guard pathExtension == "dae" && name.lowercased() == currentObjectId! && !url.path.contains("lighting") else { return nil }
             return VirtualObject(url: url)
         }
         
-        loadVirtualObject(a[0], loadedHandler: { [unowned self] loadedObject in
+        loadVirtualObject(modelsFromFile[0], loadedHandler: { [unowned self] loadedObject in
             self.arView.prepare([loadedObject], completionHandler: { _ in
                 DispatchQueue.main.async {
-                    guard let cameraTransform = arView.session.currentFrame?.camera.transform,
-                        let result = arView.smartHitTest(
-                            screenCenter,
-                            infinitePlane: false,
-                            objectPosition: loadedObject.simdWorldPosition,
-                            allowedAlignments: loadedObject.allowedAlignments)
-                        else { return }
-                    
-                    let planeAlignment: ARPlaneAnchor.Alignment
-                    if let planeAnchor = result.anchor as? ARPlaneAnchor {
-                        planeAlignment = planeAnchor.alignment
-                    } else if result.type == .estimatedHorizontalPlane {
-                        planeAlignment = .horizontal
-                    } else if result.type == .estimatedVerticalPlane {
-                        planeAlignment = .vertical
-                    } else {
-                        return
-                    }
-
-                    /*
-                     Plane hit test results are generally smooth. If we did *not* hit a plane,
-                     smooth the movement to prevent large jumps.
-                     */
-                    let transform = result.worldTransform
-                    let isOnPlane = result.anchor is ARPlaneAnchor
-                    loadedObject.setTransform(transform,
-                                        relativeTo: cameraTransform,
-                                        smoothMovement: !isOnPlane,
-                                        alignment: planeAlignment,
-                                        allowAnimation: false)
-                    
-                    self.arView.scene.rootNode.addChildNode(loadedObject)
-                    self.arView.addOrUpdateAnchor(for: loadedObject)
-                    
-                    loadedObject.isHidden = false
+                    loadedObjectsById.updateValue(loadedObject, forKey: currentObjectId!)
+                    currentObject = loadedObject
+            
+                    completion()
                 }
             })
         })
+    }
+    
+    @IBAction func onAddTap(_ sender: Any) {
+        translate(currentObject!, basedOn: screenCenter, infinitePlane: false, allowAnimation: false)
+        arView.scene.rootNode.addChildNode(currentObject!)
+        arView.addOrUpdateAnchor(for: currentObject!)
+
+        currentObject!.isHidden = false
+    }
+    
+    @IBAction func onDeleteALL(_ sender: Any) {
+        arView.scene.rootNode.childNodes.forEach { node in
+            node.removeFromParentNode()
+        }
+    }
+    
+    func updateFocusSquare(isObjectVisible: Bool) {
+        if isObjectVisible {
+            focusSquare.hide()
+        } else {
+            focusSquare.unhide()
+        }
+        
+        if let camera = session.currentFrame?.camera, case .normal = camera.trackingState,
+            let result = self.arView.smartHitTest(screenCenter) {
+            updateQueue.async {
+                self.arView.scene.rootNode.addChildNode(self.focusSquare)
+                self.focusSquare.state = .detecting(hitTestResult: result, camera: camera)
+            }
+            addButton.isHidden = false
+        } else {
+            updateQueue.async {
+                self.focusSquare.state = .initializing
+                self.arView.pointOfView?.addChildNode(self.focusSquare)
+            }
+            addButton.isHidden = true
+        }
     }
     
     func loadVirtualObject(_ object: VirtualObject, loadedHandler: @escaping (VirtualObject) -> Void) {
@@ -132,12 +199,19 @@ class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         
-        arView.delegate = self
-        arView.session.delegate = self
-
-        setupCamera()
-        resetTracking()
-        arView.setupDirectionalLighting(queue: updateQueue)
+        loadObject(completion: {
+            self.arView.delegate = self
+            self.arView.session.delegate = self
+            
+            self.arView.scene.rootNode.addChildNode(self.focusSquare)
+            
+            self.setupCamera()
+            self.resetTracking()
+            self.arView.setupDirectionalLighting(queue: self.updateQueue)
+            
+            self.activityIndicator.stopAnimating()
+        })
     }
 }
